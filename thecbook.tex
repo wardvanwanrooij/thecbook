@@ -1,0 +1,35 @@
+\documentclass[12pt,twoside,a4paper]{book}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+%\usepackage[normal,footnotesize,bf]{caption3}
+\usepackage{caption3}
+\usepackage[pdftex]{graphicx}
+\usepackage[pdftex,bookmarks=true,bookmarksnumbered=true,hypertexnames=false,breaklinks=true,linkbordercolor={0 0 1}]{hyperref}
+\hypersetup{pdfauthor={Ward van Wanrooij},pdftitle={The C Book},pdfsubject={The C Book}}
+\pdfadjustspacing=1
+\raggedbottom
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\fvset{fontsize=\footnotesize}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[EL,OR]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\fancypagestyle{plain}{}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0in}
+\begin{document}
+\frontmatter
+\title{The C Book\thanks{Conversion to LaTeX by Ward van Wanrooij. Any layout issues are caused by my conversion script and do not reflect on the authors. Also available on-line at \url{http://publications.gbdirect.co.uk/c_book/}}}
+\author{Mike Banahan \and Declan Brady \and Mark Doran}
+\date{January 1991}
+\maketitle
+\pdfbookmark[1]{Preamble}{prea}
+\newpage
+\pdfbookmark[1]{Contents}{toc}
+\setcounter{page}{1}
+\tableofcontents
+\mainmatter
+\include{book}
+\end{document}
