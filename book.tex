@@ -5309,9 +5309,9 @@ if (a < b){
 
 
   \begin{Verbatim}
-if (a!=0 \&\& b/a > 5)...
+if (a!=0 && b/a > 5)...
 /* alternative */
-if (a \&\& b/a > 5)
+if (a && b/a > 5)
 \end{Verbatim}
 
   In either version \texttt{b/a} will only be evaluated if a is
@@ -5334,7 +5334,7 @@ if(!(a>b))
 /* alternative */
 if(a <= b)
 
-if (!(a>b \&\& c<d))...
+if (!(a>b && c<d))...
 /* alternative */
 if (a<=b || c>=d)...
 \end{Verbatim}
@@ -5357,7 +5357,7 @@ if (a<=b || c>=d)...
 
 
   \begin{Verbatim}
-if(a\&b == c){...
+if(a&b == c){...
 \end{Verbatim}
 
   What happens is that \texttt{b} is compared for equality with
@@ -7190,7 +7190,7 @@ ip = 6;
 
    \begin{Verbatim}
 int ar[5], *ip;
-ip = \&ar[3];
+ip = &ar[3];
 \end{Verbatim}
 
    In that example, the pointer is made to point to the member of the
@@ -7236,8 +7236,8 @@ ip = \&ar[3];
    \begin{Verbatim}
 int i;
 float f;
-      /* '\&i' would be of type pointer to int */
-      /* '\&f' would be of type pointer to float */
+      /* '&i' would be of type pointer to int */
+      /* '&f' would be of type pointer to float */
 \end{Verbatim}
 
    In each case the pointer would point to the object named in the
@@ -7373,7 +7373,7 @@ date(day, month);
    \begin{Verbatim}
 int ar[20], *ip;
 
-ip = \&ar[5];
+ip = &ar[5];
 *ip = 0;        /* equivalent to ar[5] = 0; */
 \end{Verbatim}
 
@@ -7403,7 +7403,7 @@ ip = \&ar[5];
    \begin{Verbatim}
 int ar[20], *ip;
 
-for(ip = \&ar[0]; ip < \&ar[20]; ip++)
+for(ip = &ar[0]; ip < &ar[20]; ip++)
       *ip = 0;
 \end{Verbatim}
 
@@ -7580,10 +7580,10 @@ const int *pci;         /* pc is a pointer to a constant int */
       /* and now the more complicated stuff */
 
 /* cpi is a constant pointer to an int */
-int *const cpi = \&i;
+int *const cpi = &i;
 
 /* cpci is a constant pointer to an constant int */
-const int *const cpci = \&ci;
+const int *const cpci = &ci;
 \end{Verbatim}
 
    The first declaration (of \texttt{i}) is unsurprising. Next, the
@@ -8205,7 +8205,7 @@ malloc(sizeof(int[10]))
 
   \begin{Verbatim}
 while(number of strings read < MAXSTRING
-      \&\& input still remains){
+      && input still remains){
 
               read next string;
 }
@@ -8496,10 +8496,10 @@ int i;
 int *ip;
 void *vp;
 
-ip = \&i;
+ip = &i;
 vp = ip;
 ip = vp;
-if(ip != \&i)
+if(ip != &i)
       printf("Compiler error\n");
 \end{Verbatim}
 
@@ -8512,7 +8512,7 @@ if(ip != \&i)
 int i;
 int *ip, *const cpi;
 
-ip = \&i;
+ip = &i;
 cpi = ip;       /* permitted */
 if(cpi != ip)
       printf("Compiler error\n");
@@ -8566,7 +8566,7 @@ ip = cpi;       /* not permitted */
 
    \begin{Verbatim}
 int x[100];
-int *pi, *cpi = \&x[99]; /* cpi points to the last element of x */
+int *pi, *cpi = &x[99]; /* cpi points to the last element of x */
 
 pi = x;
 if((cpi - pi) != 99)
@@ -9008,9 +9008,9 @@ main(){
       const struct somestruct *cssp;
 
       s_item.i = 1;   /* fine */
-      ssp = \&s_item;
+      ssp = &s_item;
       ssp->i += 2;    /* fine */
-      cssp = \&s_item;
+      cssp = &s_item;
       cssp->i = 0;    /* not permitted - cssp points to const objects */
 
       exit(EXIT_SUCCESS);
@@ -10840,7 +10840,7 @@ else
    \begin{Verbatim}
 #define NAME    100
 
-#if     ((NAME > 50) \&\& (defined __STDC__))
+#if     ((NAME > 50) && (defined __STDC__))
 /* do something */
 #elif   NAME > 25
 /* do something else*/
@@ -11808,7 +11808,7 @@ extern const volatile unsigned long int rt_clk;
 
 \begin{Verbatim}
 char c;
-char *const cp = \&c;
+char *const cp = &c;
 \end{Verbatim}
 
    It's simple really; \texttt{cp} is a pointer to
@@ -11914,7 +11914,7 @@ const char *cp;
 
 \begin{Verbatim}
 struct devregs{
-      unsigned short  csr;    /* control \& status */
+      unsigned short  csr;    /* control & status */
       unsigned short  data;   /* data port */
 };
 volatile struct devregs *const dvp=DEVADDR+devno;
@@ -13292,7 +13292,7 @@ setjmp(place);                    /* expression statement */
 if(setjmp(place)) ...             /* whole controlling expression */
 if(!setjmp(place)) ...            /* whole controlling expression */
 if(setjmp(place) < 4) ...         /* whole controlling expression */
-if(setjmp(place)<;4 \&\& 1!=2) ...  /* forbidden */
+if(setjmp(place)<;4 && 1!=2) ...  /* forbidden */
 \end{Verbatim}
 
  
@@ -16756,11 +16756,11 @@ getnum(){
 
     \item 
      \begin{Verbatim}
-(c = ((i << (- (--f))) \& 0xf));
-(char = ((int << (- (--float))) \& int ));
-(char = ((int << (- float)) \& int ));
-(char = ((int << float) \& int));
-(char = (int \& int));
+(c = ((i << (- (--f))) & 0xf));
+(char = ((int << (- (--float))) & int ));
+(char = ((int << (- float)) & int ));
+(char = ((int << float) & int));
+(char = (int & int));
 (char);
 \end{Verbatim}
 
@@ -17025,7 +17025,7 @@ sine(double x){
     difference = thisval - lastval;
     if(difference < 0)
       difference = -difference;
-    }while(difference > DELTA \&\& term < 16);
+    }while(difference > DELTA && term < 16);
 
   return(thisval);
 }
@@ -17048,7 +17048,7 @@ double difference, thisval, lastval;
     difference = thisval - lastval;
     if(difference < 0)
       difference = -difference;
-  }while(difference > DELTA \&\& term < 16);
+  }while(difference > DELTA && term < 16);
 
   return(thisval);
 }
@@ -17101,7 +17101,7 @@ double difference, thisval, lastval;
 int
 st_eq(const char *s1, const char * s2){
 
-  while(*s1 \&\& *s2 \&\& (*s1 == *s2)){
+  while(*s1 && *s2 && (*s1 == *s2)){
     s1++; s2++;
   }
 
@@ -17116,7 +17116,7 @@ st_eq(const char *s1, const char * s2){
 const char *
 find_c(char c, const char *cp){
 
-  while(*cp \&\& *cp != c)
+  while(*cp && *cp != c)
      cp++;
   if(*cp)
     return(cp);
@@ -17142,7 +17142,7 @@ sub_st(const char *target, const char *sample){
     targ_p = target;
     sample_p = sample;
     /* string compare */
-    while(*targ_p \&\& *sample_p \&\& (*targ_p == *sample_p)){
+    while(*targ_p && *sample_p && (*targ_p == *sample_p)){
         targ_p++; sample_p++;
     }
     /*
@@ -17215,7 +17215,7 @@ struct int_struc z;
   \subsubsection*{Exercise 6.5}
 
    \begin{Verbatim}
-p = \&z;
+p = &z;
 p->a = 0;
 \end{Verbatim}
 
