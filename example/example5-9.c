@@ -3,5 +3,5 @@
 int ar[ARLEN], *ip;
 
 ip = ar;
-while(ip < &ar[ARLEN])
-      *(ip++) = 0;
+while (ip < &ar[ARLEN])
+  *(ip++) = 0;

@@ -1,6 +1,6 @@
 void (*fparr[])(int, float) = {
-                              /* initializers */
-                      };
+			       /* initializers */
+};
 /* then call one */
 
 fparr[5](1, 3.4);

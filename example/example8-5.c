@@ -1,12 +1,11 @@
 /*
-* Declare the device registers
-* Whether to use int or short
-* is implementation dependent
-*/
-
-struct devregs{
-        unsigned short volatile csr;
-        unsigned short const volatile data;
+ * Declare the device registers
+ * Whether to use int or short
+ * is implementation dependent
+ */
+struct devregs {
+  unsigned short       volatile csr;   /* control & status */
+  unsigned short const volatile data;  /* data port */
 };
 
 /* bit patterns in the csr */
@@ -21,26 +20,26 @@ struct devregs{
 #define NDEVS   4
 
 /*
-* Busy-wait function to read a byte from device n.
-* check range of device number.
-* Wait until READY or ERROR
-* if no error, read byte, return it
-* otherwise reset error, return 0xffff
-*/
-unsigned int read_dev(unsigned devno){
+ * Busy-wait function to read a byte from device n.
+ * check range of device number.
+ * Wait until READY or ERROR
+ * if no error, read byte, return it
+ * otherwise reset error, return 0xffff
+ */
+unsigned int read_dev(unsigned devno) {
 
-        struct devregs * const dvp = DEVADDR + devno;
+  struct devregs * const dvp = DEVADDR + devno;
 
-        if(devno >= NDEVS)
-                return(0xffff);
+  if (devno >= NDEVS)
+    return(0xffff);
 
-        while((dvp->csr & (READY | ERROR)) == 0)
-                ; /* NULL - wait till done */
+  while((dvp->csr & (READY | ERROR)) == 0)
+    ; /* NULL - wait till done */
 
-        if(dvp->csr & ERROR){
-                dvp->csr = RESET;
-                return(0xffff);
-        }
+  if(dvp->csr & ERROR){
+    dvp->csr = RESET;
+    return(0xffff);
+  }
 
-        return((dvp->data) & 0xff);
+  return((dvp->data) & 0xff);
 }

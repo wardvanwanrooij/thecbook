@@ -3,18 +3,18 @@
 
 void func(int);
 
-main(){
-      void (*fp)(int);
+main() {
+  void (*fp)(int);
 
-      fp = func;
+  fp = func;
 
-      (*fp)(1);
-      fp(2);
+  (*fp)(1);
+  fp(2);
 
-      exit(EXIT_SUCCESS);
+  exit(EXIT_SUCCESS);
 }
 
 void
-func(int arg){
-      printf("%d\n", arg);
+func(int arg) {
+  printf("%d\n", arg);
 }
