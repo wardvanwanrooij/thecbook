@@ -5,16 +5,16 @@ static length;
 static void fillup(void);
 
 int
-callable (){
-      if (length ==0){
-              fillup ();
-      }
-      return (buf [length--]);
+callable() {
+  if (length == 0) {
+    fillup();
+  }
+  return(buf[length--]);
 }
 
 static void
-fillup (void){
-      while (length <100){
-              buf [length++] = 0;
-      }
+fillup(void) {
+  while (length <100) {
+    buf[length++] = 0;
+  }
 }
