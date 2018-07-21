@@ -14,11 +14,8 @@ main() {
   cpi = &ci;
   ncpi = &i;
 
-  /*
-   * this is allowed
-   */
-  cpi = ncpi;
-
+  printf("ci has value %i at address %p, cpi has value %i and points at address %p.\n", ci, &ci, *cpi, cpi);
+ 
   /* this needs a cast
    * because it is usually a big mistake,
    * see what it permits below.
@@ -29,7 +26,8 @@ main() {
    * modify a const through a pointer
    */
   *ncpi = 42;
-  printf("const is %i. ", *ncpi);
 
+  printf("ci has value %i at address %p, cpi has value %i and points at address %p.\n", ci, &ci, *cpi, cpi);
+ 
   exit(EXIT_SUCCESS);
 }
