@@ -9,6 +9,8 @@
 \usepackage[pdftex]{graphicx}
 \usepackage[shortcuts]{extdash}
 \usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
 %\usepackage{pdfsync} % does not provide forward search 
 \usepackage{srcltx}   % does     provide forward search 
 \usepackage{adjustbox}
@@ -40,38 +42,38 @@
 \newcommand{\auto} {\texttt{auto}}
 \newcommand{\kbreak}{\texttt{break}} % command 
 \newcommand{\case} {\texttt{case}}   % command 
-\newcommand{\kchar} {\texttt{char}}
+\newcommand{\kchar} {\texttt{char}}  % type 
 \newcommand{\const}{\texttt{const}}
 \newcommand{\continue}{\texttt{continue}} % command 
 \newcommand{\default}{\texttt{default}}
 \newcommand{\kdo}    {\texttt{do}}        % command **** mysterious:\do does not
 
-\newcommand{\double}{\texttt{double}}
-\newcommand{\kelse}{\texttt{else}} % command 
-\newcommand{\enum}{\texttt{enum}}
+\newcommand{\double}{\texttt{double}} % type 
+\newcommand{\kelse}{\texttt{else}}    % command 
+\newcommand{\enum}{\texttt{enum}}     % type 
 \newcommand{\extern}{\texttt{extern}}
-\newcommand{\float}{\texttt{float}}
-\newcommand{\for}{\texttt{for}} % command 
-\newcommand{\goto}{\texttt{goto}} % command 
-\newcommand{\kif}{\texttt{if}} % command 
+\newcommand{\float}{\texttt{float}} % type 
+\newcommand{\for}{\texttt{for}}     % command 
+\newcommand{\goto}{\texttt{goto}}   % command 
+\newcommand{\kif}{\texttt{if}}      % command 
 
-\newcommand{\kint}{\texttt{int}}
-\newcommand{\klong}{\texttt{long}}
+\newcommand{\kint}{\texttt{int}}   % type 
+\newcommand{\klong}{\texttt{long}} % type 
 \newcommand{\register}{\texttt{register}}
 \newcommand{\return}{\texttt{return}} % command 
-\newcommand{\short}{\texttt{short}}
-\newcommand{\signed}{\texttt{signed}}
+\newcommand{\short}{\texttt{short}}   % type 
+\newcommand{\signed}{\texttt{signed}} % type 
 \newcommand{\sizeof}{\texttt{sizeof}} % function
 \newcommand{\static}{\texttt{static}}
     
-\newcommand{\struct}{\texttt{struct}}
-\newcommand{\switch}{\texttt{switch}}
+\newcommand{\struct}{\texttt{struct}} % type 
+\newcommand{\switch}{\texttt{switch}} % command 
 \newcommand{\typedef}{\texttt{typedef}}
 \newcommand{\union}{\texttt{union}}
-\newcommand{\unsigned}{\texttt{unsigned}}
-\newcommand{\void}{\texttt{void}}
+\newcommand{\unsigned}{\texttt{unsigned}} % type 
+\newcommand{\void}{\texttt{void}}         % type 
 \newcommand{\volatile}{\texttt{volatile}}
-\newcommand{\while}{\texttt{while}}
+\newcommand{\while}{\texttt{while}}       % command 
 
 \newcommand{\pp}{\texttt{++}}
 \newcommand{\mm}{\texttt{-{}-}}
@@ -98,3 +100,8 @@
 \bibliographystyle{apalike}
 \bibliography{bib}{}
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
