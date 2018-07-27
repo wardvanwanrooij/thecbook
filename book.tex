@@ -1545,20 +1545,22 @@ else
 
 
    The Standard requires that an alphabet of 96 symbols is available
-    for C as follows:
+    for c as follows:
 
 
-   \begin{tabular}{p{0.9\textwidth}}
-     \texttt{a b c d e f g h i j k l m n o p q r s t u v w x y z}    \\
-     \texttt{A B C D E F G H I J K L M N O P Q R S T U V W X Y Z}    \\
-     \texttt{0 1 2 3 4 5 6 7 8 9}    \\
-     \texttt{! " \# \% \& ' ( ) * + , - . /}    \\
-     \texttt{: ; < = > ? [ \textbackslash ] \^ \_ \{ | \} \~}    \\
-     space, horizontal and vertical tab    \\
-     form feed, newline    \\
-   \end{tabular}
-
-\begin{center}\textit{Table 2.1. The Alphabet of C}\end{center}
+    \begin{longtable}[htb]{l}
+      \hspace{0pt} \\
+      \toprule
+      \texttt{a b c d e f g h i j k l m n o p q r s t u v w x y z}    \\
+      \texttt{a b c d e f g h i j k l m n o p q r s t u v w x y z}    \\
+      \texttt{0 1 2 3 4 5 6 7 8 9}    \\
+      \texttt{! " \# \% \& ' ( ) * + , - . /}    \\
+      \texttt{: ; < = > ? [ \textbackslash ] \^ \_ \{ | \} \~}    \\
+      space, horizontal and vertical tab    \\
+      form feed, newline    \\
+      \bottomrule
+      \caption{\label{tab:alphabetC}the alphabet of C}
+    \end{longtable}
 
 
    It turns out that most of the commonly used computer alphabets contain
@@ -1590,20 +1592,26 @@ else
     Table 2.1 below shows the trigraphs defined in the Standard.
 
 
-   \begin{tabular}{ll}
-     C character & Trigraph    \\
-     \texttt{\#} & \texttt{??=}    \\
-     \texttt{[}  & \texttt{??(}    \\
-     \texttt{]}  & \texttt{??)}    \\
-     \texttt{\{} & \texttt{??<}    \\
-     \texttt{\}} & \texttt{??>}    \\
-     \texttt{\textbackslash} & \texttt{??/}    \\
-     \texttt{|}  & \texttt{??!}    \\
-     \texttt{\~} & \texttt{??-}    \\
-     \texttt{\^} & \texttt{??'}    \\
-\end{tabular}
 
-\begin{center}\textit{Table 2.2. Trigraphs}\end{center}
+
+    \begin{longtable}{ll}
+      \hspace{0pt} \\
+      \toprule
+      C character & Trigraph    \\
+      \midrule
+      \texttt{\#} & \texttt{??=}    \\
+      \texttt{[}  & \texttt{??(}    \\
+      \texttt{]}  & \texttt{??)}    \\
+      \texttt{\{} & \texttt{??<}    \\
+      \texttt{\}} & \texttt{??>}    \\
+      \texttt{\textbackslash} & \texttt{??/}    \\
+      \texttt{|}  & \texttt{??!}    \\
+      \texttt{\~} & \texttt{??-}    \\
+      \texttt{\^} & \texttt{??'}    \\
+      \bottomrule
+      \caption{\label{tab:trigraphs} Trigraphs}
+    \end{longtable}
+   % \begin{center}\textit{Table 2.2. Trigraphs}\end{center}
 
 
    As an example, let's assume that your terminal doesn't have the
@@ -1942,20 +1950,20 @@ int egral();
     keywords used in Standard C; you will notice that none of them use
     upper-case letters.
 
-    \begin{table}[htb]
-      \begin{tabular}{llll}
-     \auto     & \double & \kint     & \struct   \\
-     \kbreak   & \kelse  & \klong    & \switch   \\
-     \case     & \enum   & \register & \typedef  \\
-     \kchar    & \extern & \return   & \union    \\
-     \const    & \float  & \short    & \unsigned \\
-     \continue & \for    & \signed   & \void     \\
-     \default  & \goto   & \sizeof   & \volatile \\
-     \kdo      & \kif    & \static   & \while    \\
-   \end{tabular}
+    \begin{longtable}[htb]{llll}
+      \hspace{0pt} \\
+      \toprule
+      \auto     & \double & \kint     & \struct   \\
+      \kbreak   & \kelse  & \klong    & \switch   \\
+      \case     & \enum   & \register & \typedef  \\
+      \kchar    & \extern & \return   & \union    \\
+      \const    & \float  & \short    & \unsigned \\
+      \continue & \for    & \signed   & \void     \\
+      \default  & \goto   & \sizeof   & \volatile \\
+      \kdo      & \kif    & \static   & \while    \\
+      \bottomrule
       \caption{\label{tab:keywords} Keywords}
-      % \begin{center}\textit{Table 2.3. Keywords}\end{center}
-    \end{table}
+    \end{longtable}
 
 
    The new keywords that are likely to surprise old programmers are:
@@ -2283,14 +2291,18 @@ int def_func(void){
     shows the appropriate format description for each of the real types.
 
 
-   \begin{tabular}{ll}
-     Type                 & Format        \\
-     \float{}             & \texttt{\%f}  \\
-     \double{}            & \texttt{\%f}  \\
-     \texttt{long double} & \texttt{\%lf} \\
-   \end{tabular}
-
-   \begin{center}\textit{Table 2.4. Format codes for real numbers}\end{center}
+    \begin{longtable}[htb]{ll}
+      \hspace{0pt} \\
+      \toprule
+      Type                 & Format        \\
+      \midrule
+      \float{}             & \texttt{\%f}  \\
+      \double{}            & \texttt{\%f}  \\
+      \texttt{long double} & \texttt{\%Lf} \\
+      \bottomrule
+      \caption{\label{tab:formatCodesR} Format codes for real numbers}
+    \end{longtable}
+    %\begin{center}\textit{Table 2.4. Format codes for real numbers}\end{center}
 
 
    Here's an example to try:
@@ -2641,10 +2653,11 @@ int def_func(void){
     result printed: the behaviour of \texttt{printf} is undefined if the
     wrong format is given.
 
-    \begin{adjustbox}{width={\textwidth}}
-
-   \begin{tabular}{ll}
+      \begin{longtable}[htb]{ll}
+      \hspace{0pt} \\
+      \toprule
      Format        & Use with    \\
+      \midrule
      \texttt{\%c}  & \kchar{} (in character form)    \\
      \texttt{\%d}  & decimal \texttt{signed int}, \short, \kchar   \\
      \texttt{\%u}  & decimal \texttt{unsigned int}, \texttt{unsigned short},
@@ -2654,10 +2667,10 @@ int def_func(void){
      \texttt{\%o}  & octal \kint, \short, \kchar    \\
      \texttt{\%ld} & decimal \texttt{signed long}    \\
      \texttt{\%lu \%lx \%lo} & as above, but for \klong{}s    \\
-   \end{tabular}
- \end{adjustbox}
- 
-\begin{center}\textit{Table 2.5. More format codes}\end{center}
+      \bottomrule
+      \caption{\label{tab:formatCodesI} More format codes}
+   \end{longtable}
+   % \begin{center}\textit{Table 2.5. More format codes}\end{center}
 
 
    A full description of the format codes that you can use with printf is
@@ -3203,17 +3216,21 @@ L"a string"[4]
      to use the table as a reference later.
 
 
-    \begin{tabular}{lll}
+    \begin{longtable}{lll}
+      \hspace{0pt} \\
+      \toprule
       Declaration          & Cast                 & Type     \\
+      \midrule
       \texttt{int x;}      & \texttt{(int)}       & \kint{}     \\
       \texttt{float f;}    & \texttt{(float)}     & \float{}     \\
       \texttt{char x[30];} & \texttt{(char [30])} & array of \kchar     \\
       \texttt{int *ip;}    & \texttt{(int *)}     & pointer to \kint{}     \\
       \texttt{int (*f)();} & \texttt{(int (*)())} & pointer to function returning \kint{}
       \\
-\end{tabular}
-
-\begin{center}\textit{Table 2.6. Casts}\end{center}
+     \bottomrule
+      \caption{\label{tab:casts} Casts}
+ \end{longtable}
+%\begin{center}\textit{Table 2.6. Casts}\end{center}
 
 
    
@@ -3314,17 +3331,21 @@ L"a string"[4]
      which also shows the arithmetic conversions that are applied.
 
 
-    \begin{tabular}{lll}
+    \begin{longtable}{lll}
+      \hspace{0pt} \\
+      \toprule
       Operator    & Effect           & Conversions     \\
+      \midrule
       \texttt{\&} & bitwise AND      & usual arithmetic conversions     \\
       \texttt{|}  & bitwise OR       & usual arithmetic conversions     \\
       \texttt{\^} & Bitwise XOR      & usual arithmetic conversions     \\
       \texttt{<{}<} & left shift       & integral promotions     \\
       \texttt{>{}>} & right shift      & integral promotions     \\
       \texttt{\~} & one's complement & integral promotions     \\
-\end{tabular}
-
-\begin{center}\textit{Table 2.7. Bitwise operators}\end{center}
+      \bottomrule
+      \caption{\label{tab:bitOps} Bitwise operators}
+    \end{longtable}
+%\begin{center}\textit{Table 2.7. Bitwise operators}\end{center}
 
 
     Only the last, the one's complement, is a unary operator. It inverts
@@ -3506,14 +3527,17 @@ a = b = c = d;
      assignment operators; you will see them used a lot from now on.
 
 
-    \begin{tabular}{lll}
+    \begin{longtable}{lll}
+      \hspace{0pt} \\
+      \toprule
       \texttt{*=}  & \texttt{/=}  & \texttt{\%=}     \\
       \texttt{+=}  & \texttt{-=}  &                  \\
       \texttt{\&=} & \texttt{|=}  & \texttt{\^{}=}     \\
       \texttt{>{}>=} & \texttt{<{}<=} &                 \\
-    \end{tabular}
-
-\begin{center}\textit{Table 2.8. Compound assignment operators}\end{center}
+      \bottomrule
+      \caption{\label{tab:compAssign} Compound assignment operators}
+    \end{longtable}
+%\begin{center}\textit{Table 2.8. Compound assignment operators}\end{center}
 
 
     In each case, arithmetic conversions are applied as if the expression
@@ -3750,8 +3774,11 @@ f2 = ++f1 + ++f1;
     operators: the table indicates which are which.
 
 
-   \begin{tabular}{lll}
+   \begin{longtable}{lll}
+      \hspace{0pt} \\
+      \toprule
      Operator        & Direction     & Notes    \\
+      \midrule
      \texttt{() [] -> .} & left to right & 1    \\
      \texttt{! \~{} ++ -- - + (cast) * \& sizeof}
                      & right to left & all unary  \\
@@ -3771,9 +3798,10 @@ f2 = ++f1 + ++f1;
 \multicolumn{3}{p{0.9\textwidth}}{1. Parentheses are for expression grouping, \textit{not}
      function call.}\\
 \multicolumn{3}{p{0.9\textwidth}}{2. This is unusual. See Section 3.4.1.}\\
-\end{tabular}
-
-\begin{center}\textit{Table 2.9. Operator precedence and associativity}\end{center}
+      \bottomrule
+      \caption{\label{tab:opPrecAssoc} Operator precedence and associativity}
+\end{longtable}
+%\begin{center}\textit{Table 2.9. Operator precedence and associativity}\end{center}
 
 
    The question is, what can you do with that information, now that it's
@@ -4113,8 +4141,11 @@ L'like this'
     shows the \textbf{escape sequences} defined in the Standard.
 
 
-   \begin{tabular}{ll}
+   \begin{longtable}{ll}
+      \hspace{0pt} \\
+      \toprule
      Sequence               & Represents     \\
+      \midrule
      \texttt{\textbackslash a} & audible alarm    \\
      \texttt{\textbackslash b} & backspace       \\
      \texttt{\textbackslash f} & form feed       \\
@@ -4126,8 +4157,10 @@ L'like this'
      \texttt{\textbackslash'} & quote            \\
      \texttt{\textbackslash"} & double quote     \\
      \texttt{\textbackslash?} & question mark    \\
-   \end{tabular}
-   \begin{center}\textit{Table 2.10. C escape sequences}\end{center}
+      \bottomrule
+      \caption{\label{tab:escSeq} C escape sequences}
+   \end{longtable}
+   %\begin{center}\textit{Table 2.10. C escape sequences}\end{center}
 
 
    It is also possible to use numeric escape sequences to specify a
@@ -4426,16 +4459,21 @@ then
     them.
 
 
-   \begin{tabular}{ll}
+   \begin{longtable}[htb]{ll}
+      \hspace{0pt} \\
+      \toprule
      Operator    & Operation    \\
+      \midrule
      \texttt{<}  & less than    \\
      \texttt{<=} & less than or equal to    \\
      \texttt{>}  & greater than    \\
      \texttt{>=} & greater than or equal to    \\
      \texttt{==} & equal to    \\
      \texttt{!=} & not equal to    \\
-   \end{tabular}
-   \begin{center}\textit{Table 3.1. Relational operators}\end{center}
+      \bottomrule
+      \caption{\label{tab:relOp} Relational operators}
+   \end{longtable}
+   %\begin{center}\textit{Table 3.1. Relational operators}\end{center}
 
 
    Be extra careful of the test for equality, \texttt{==}. As we have
@@ -6434,14 +6472,18 @@ int printf(const char *, ...);
    summarize:
 
 
-  \begin{tabular}{lll}
+  \begin{longtable}{lll}
+    \hspace{0pt} \\
+    \toprule
     Type of linkage & Type of object & Accessibility   \\
+    \midrule
     external & external & throughout the program   \\
     internal & external & a single file   \\
-    none & internal & local to a single function   \\
-  \end{tabular}
-
-\begin{center}\textit{Table 4.1. Linkage and accessibility}\end{center}
+    none     & internal & local to a single function   \\
+    \bottomrule
+    \caption{\label{tab:linkAcc} Linkage and accessibility}
+  \end{longtable}
+  % \begin{center}\textit{Table 4.1. Linkage and accessibility}\end{center}
 
 
   Finally, before we see an example, it is important to know that all
@@ -6636,25 +6678,30 @@ void another_func(void) {
    declarations and the resulting linkage:
 
 
-  \begin{tabular}{lllll}
-    Declaration & Keyword   & Resulting Linkage & Accessibility & Note   \\
-    external    & none      & external & entire program    & 2   \\
-    external    & \extern{} & external & entire program    & 2   \\
-    external    & \static{} & internal & a single file     & 2   \\
-    internal    & none      & none     & a single function &    \\
-    internal    & \extern{} & external & entire program    & 1   \\
-    internal    & \static{} & none     & a single function & 2   \\
-    \multicolumn{5}{p{0.9\textwidth}}{
-    Although the accessibility of internal declarations prefixed with
-    \extern{} is program-wide, watch out for the scope of the name.}\\
-    \multicolumn{5}{p{0.9\textwidth}}{
-    External (or internal \static{}) objects are initialized
-    once only, at program start-up.
-    The absence of explicit initialization
-    is taken to be a default initialization of zero.}\\
-\end{tabular}
-
-\begin{center}\textit{Table 4.2. Summary of Linkage}\end{center}
+   \begin{longtable}{lllll}
+     \hspace{0pt} \\
+     \toprule
+     Declaration & Keyword   & Resulting Linkage & Accessibility & Note   \\
+     \midrule
+     external    & none      & external & entire program    & 2   \\
+     external    & \extern{} & external & entire program    & 2   \\
+     external    & \static{} & internal & a single file     & 2   \\
+     internal    & none      & none     & a single function &    \\
+     internal    & \extern{} & external & entire program    & 1   \\
+     internal    & \static{} & none     & a single function & 2   \\
+     \midrule
+     \multicolumn{5}{p{0.9\textwidth}}{
+     Although the accessibility of internal declarations prefixed with
+     \extern{} is program-wide, watch out for the scope of the name.}\\
+     \multicolumn{5}{p{0.9\textwidth}}{
+     External (or internal \static{}) objects are initialized
+     once only, at program start-up.
+     The absence of explicit initialization
+     is taken to be a default initialization of zero.}\\
+      \bottomrule
+      \caption{\label{tab:sumLink} Summary of Linkage}
+   \end{longtable}
+   % \begin{center}\textit{Table 4.2. Summary of Linkage}\end{center}
 
     
   There are a few golden rules for the use of functions that are worth
@@ -7881,14 +7928,17 @@ secret[8] = 0;
     Table 5.1 gives a list.
 
 
-   \begin{tabular}{ll}
+   \begin{longtable}{ll}
+     \hspace{0pt} \\
+     \toprule
      \texttt{++(*p)} & pre-increment thing pointed to    \\
      \texttt{(*p)++} & post-increment thing pointed to    \\
      \texttt{*(p++)} & access via pointer, post-increment pointer    \\
      \texttt{*(++p)} & access via pointer which has already been incremented \\
-   \end{tabular}
-
-\begin{center}\textit{Table 5.1. Pointer notation}\end{center}
+     \bottomrule
+     \caption{\label{tab:pointer} Pointer notation}
+   \end{longtable}
+   % \begin{center}\textit{Table 5.1. Pointer notation}\end{center}
 
 
    Read it carefully; make sure that you understand the combinations.
@@ -7902,15 +7952,19 @@ secret[8] = 0;
     be there.
 
 
-   \begin{tabular}{ll}
-     With parentheses & Without, if possible    \\
-     \texttt{++(*p)} & \texttt{++*p}    \\
-     \texttt{(*p)++} & \texttt{(*p)++}    \\
-     \texttt{*(p++)} & \texttt{*p++}    \\
-     \texttt{*(++p)} & \texttt{*++p}    \\
-\end{tabular}
-
-\begin{center}\textit{Table 5.2. More pointer notation}\end{center}
+    \begin{longtable}[thb]{ll}
+      \hspace{0pt} \\
+      \toprule
+      With parentheses & Without, if possible    \\
+      \midrule
+      \texttt{++(*p)}  & \texttt{++*p}   \\
+      \texttt{(*p)++}  & \texttt{(*p)++} \\
+      \texttt{*(p++)}  & \texttt{*p++}   \\
+      \texttt{*(++p)}  & \texttt{*++p}   \\
+      \bottomrule
+      \caption{\label{tab:pointer2} More pointer notation}
+    \end{longtable}
+    % \begin{center}\textit{Table 5.2. More pointer notation}\end{center}
 
 
    The usual reaction to that horrible sight is to decide that you don't
@@ -9992,24 +10046,28 @@ main() {
    Standard.
 
 
-  \begin{tabular}{ll}
-    Directive & Meaning   \\
-    \texttt{\# include} & include a source file   \\
-    \texttt{\# define} & define a macro   \\
-    \texttt{\# undef} & undefine a macro   \\
-    \texttt{\# if} & conditional compilation   \\
-    \texttt{\# ifdef} & conditional compilation   \\
-    \texttt{\# ifndef} & conditional compilation   \\
-    \texttt{\# elif} & conditional compilation   \\
-    \texttt{\# else} & conditional compilation   \\
-    \texttt{\# endif} & conditional compilation   \\
-    \texttt{\# line} & control error reporting   \\
-    \texttt{\# error} & force an error message   \\
-    \texttt{\# pragma} & used for implementation-dependent control   \\
-    \texttt{\#} & null directive; no effect   \\
-\end{tabular}
-
-\begin{center}\textit{Table 7.1. Preprocessor directives}\end{center}
+   \begin{longtable}{ll}
+     \hspace{0pt} \\
+     \toprule
+     Directive           & Meaning   \\
+     \midrule
+     \texttt{\# include} & include a source file   \\
+     \texttt{\# define}  & define a macro   \\
+     \texttt{\# undef}   & undefine a macro   \\
+     \texttt{\# if}      & conditional compilation   \\
+     \texttt{\# ifdef}   & conditional compilation   \\
+     \texttt{\# ifndef}  & conditional compilation   \\
+     \texttt{\# elif}    & conditional compilation   \\
+     \texttt{\# else}    & conditional compilation   \\
+     \texttt{\# endif}   & conditional compilation   \\
+     \texttt{\# line}    & control error reporting   \\
+     \texttt{\# error}   & force an error message   \\
+     \texttt{\# pragma}  & used for implementation-dependent control   \\
+     \texttt{\#}         & null directive; no effect   \\
+     \bottomrule
+     \caption{\label{tab:preprocDir} }
+   \end{longtable}
+   % \begin{center}\textit{Table 7.1. Preprocessor directives}\end{center}
 
 
   The meanings and use of these features are described in the following
@@ -11114,35 +11172,47 @@ else
      simple cases and take a look at what we say later about
      definitions.
 
-    \begin{adjustbox}{width={\textwidth}}
+     % \begin{adjustbox}{width={\textwidth}}
 
-    \begin{tabular}{llll}
-      Storage Class Specifier & Function or Data Object & Linkage & Duration \\
-      \static{} & either      & internal          & static     \\
-      \extern{} & either      & probably external & static     \\
-      none            & function    & probably external & static     \\
-      none            & data object & external          & static     \\
-    \end{tabular}
-  \end{adjustbox}
-  \begin{center}\textit{Table 8.1. External declarations (outside a function)}\end{center}
+     \begin{longtable}{llll}
+       \hspace{0pt} \\
+       \toprule
+       Storage Class   & Function or Data & Linkage           & Duration \\
+       Specifier       & Object           &                   &          \\
+       \midrule
+       \static{}       & either           & internal          & static   \\
+       \extern{}       & either           & probably external & static   \\
+       none            & function         & probably external & static   \\
+       none            & data object      & external          & static   \\
+       \bottomrule
+       \caption{\label{tab:extDecl} External declarations (outside a function)}
+     \end{longtable}
+     % \end{adjustbox}
+     % \begin{center}\textit{Table 8.1. External declarations (outside a function)}\end{center}
 
 
     The table above omits the \register{} and \auto{}
      storage class specifiers because they are not permitted in file-scope
      (external) declarations.
 
-    \begin{adjustbox}{width={\textwidth}}
-    \begin{tabular}{llll}
-      Storage Class Specifier & Function or Data Object & Linkage & Duration \\
+    %5\begin{adjustbox}{width={\textwidth}}
+    \begin{longtable}{llll}
+      \hspace{0pt} \\
+      \toprule
+      Storage Class   & Function or Data & Linkage           & Duration \\
+      Specifier       & Object           &                   &          \\
+      \midrule
       \register{} & data object only & none              & automatic \\
       \auto       & data object only & none              & automatic \\
       \static{}   & data object only & none              & static    \\
       \extern{}   & either           & probably external & static    \\
       none        & data object      & none              & automatic \\
       none        & function         & probably external & static    \\
-    \end{tabular}
-  \end{adjustbox}
-  \begin{center}\textit{Table 8.2. Internal declarations}\end{center}
+      \bottomrule
+      \caption{\label{tab:intDecl} Internal declarations}
+    \end{longtable}
+    % \end{adjustbox}
+    % \begin{center}\textit{Table 8.2. Internal declarations}\end{center}
 
 
     Internal \static{} variables retain their values between
@@ -12641,13 +12711,12 @@ char *setlocale(int category, const char *locale);
      The values for locale can be:
 
      \begin{tabular}{lp{0.5\textwidth}}
-       \texttt{"C"} & Select the minimal environment for C translation      \\
-       \texttt{""} & Select the implementation-defined `native environment' \\
-       implementation defined & Select other environments      \\
-\end{tabular}
-
-
-    
+       \hline
+       \texttt{"C"} & Select the minimal environment for C translation       \\
+       \texttt{""}  & Select the implementation-defined `native environment' \\
+       implementation defined & Select other environments                    \\
+       \hline
+     \end{tabular}
    \end{description}
 
    When the program starts, it has an environment as if
@@ -12694,10 +12763,12 @@ struct lconv *localeconv(void);
 
 
    \begin{tabular}{ll}
+     \hline
      \texttt{IR\pounds1,234.56}   & positive format    \\
      \texttt{(IR\pounds1,234.56)} & negative format    \\
      \texttt{IRP 1,234.56}        & international format    \\
-\end{tabular}
+     \hline
+   \end{tabular}
 
 
    then the monetary members of \texttt{lconv} would have the
@@ -12705,6 +12776,7 @@ struct lconv *localeconv(void);
 
 
    \begin{tabular}{ll}
+     \hline
      \texttt{int\_curr\_symbol}   & \texttt{"IRP "}    \\
      \texttt{currency\_symbol}    & \texttt{"IR\pounds"}    \\
      \texttt{mon\_decimal\_point} & \texttt{"."}    \\
@@ -12720,7 +12792,8 @@ struct lconv *localeconv(void);
      \texttt{n\_sep\_by\_space}   & \texttt{0}    \\
      \texttt{p\_sign\_posn}       & \texttt{CHAR\_MAX}    \\
      \texttt{n\_sign\_posn}       & \texttt{0}    \\
-\end{tabular}
+     \hline
+   \end{tabular}
 
 
   
@@ -12749,43 +12822,48 @@ struct lconv *localeconv(void);
     are more negative but must provide support for at least
     -32767.
 
-    \begin{center}
-
-    \begin{adjustbox}{width={\textwidth}}
+    %\begin{center}
+    %\begin{adjustbox}{width={\textwidth}}
     
-      \begin{tabular}{lll}
-     Name & Allowable value & Comment    \\
-     \texttt{CHAR\_BIT} & ($\geq$8) & bits in a \kchar    \\
-     \texttt{CHAR\_MAX} & see note & max value of a \kchar    \\
-     \texttt{CHAR\_MIN} & see note & min value of a \kchar    \\
-     \texttt{INT\_MAX} & ($\geq$+32767) & max value of an \kint{}    \\
-     \texttt{INT\_MIN} & ($\leq$-32767) & min value of an \kint{}    \\
-     \texttt{LONG\_MAX} & ($\geq$+2147483647) & max value of a \klong{} \\
-     \texttt{LONG\_MIN} & ($\leq$-2147483647) & min value of a \klong{} \\
-     \texttt{MB\_LEN\_MAX} & ($\geq$1) & max number of bytes in a multibyte character  \\
-     \texttt{SCHAR\_MAX} & ($\geq$+127) & max value of a \texttt{signed char} \\
-     \texttt{SCHAR\_MIN} & ($\leq$-127) & min value of a \texttt{signed char} \\
-     \texttt{SHRT\_MAX} & ($\geq$+32767) & max value of a \short{}  \\
-     \texttt{SHRT\_MIN} & ($\leq$-32767) & min value of a \short{}  \\
-     \texttt{UCHAR MAX} & ($\geq$255U) & max value of an \texttt{unsigned char}
-    \\
-     \texttt{UINT\_MAX} & ($\geq$65535U) & max value of an \texttt{unsigned int}
-    \\
-     \texttt{ULONG\_MAX} & ($\geq$4294967295U) & max value of an \texttt{unsigned long}   \\
-     \texttt{USHRT\_MAX} & ($\geq$65535U) & max value of an \texttt{unsigned short}
-    \\
-        \multicolumn{3}{p{0.9\textwidth}}{
-        Note: if the implementation treats \texttt{chars} as signed,
-        then the values of \texttt{CHAR\_MAX} and \texttt{CHAR\_MIN} are
-        the same as the equivalent \texttt{SCHAR} versions.  If not, then
-        the value of \texttt{CHAR\_MIN} is zero and the value of
-        \texttt{CHAR\_MAX} is equal to the value of
-        \texttt{UCHAR\_MAX}.}\\
-      \end{tabular}
-    \end{adjustbox}
-    \end{center}
-
-\begin{center}\textit{Table 9.1. \texttt\{<limits.h>\}}\end{center}
+    \begin{longtable}{llp{0.4\textwidth}}
+      \hspace{0pt} \\
+      \toprule
+      Name                & Allowable value & Comment    \\
+      \midrule
+      \texttt{CHAR\_BIT}  & ($\geq$8)       & bits in a \kchar    \\
+      \texttt{CHAR\_MAX}  & see note        & max value of a \kchar    \\
+      \texttt{CHAR\_MIN}  & see note        & min value of a \kchar    \\
+      \texttt{INT\_MAX}   & ($\geq$+32767)  & max value of an \kint{}    \\
+      \texttt{INT\_MIN}   & ($\leq$-32767)  & min value of an \kint{}    \\
+      \texttt{LONG\_MAX}  & ($\geq$+2147483647) & max value of a \klong{} \\
+      \texttt{LONG\_MIN}  & ($\leq$-2147483647) & min value of a \klong{} \\
+      \texttt{MB\_LEN\_MAX} & ($\geq$1)     & max number of bytes in a multibyte character  \\
+      \texttt{SCHAR\_MAX} & ($\geq$+127)    & max value of a \texttt{signed char} \\
+      \texttt{SCHAR\_MIN} & ($\leq$-127)    & min value of a \texttt{signed char}
+      \\ 
+      \texttt{SHRT\_MAX}  & ($\geq$+32767)  & max value of a \short{}  \\
+      \texttt{SHRT\_MIN}  & ($\leq$-32767)  & min value of a \short{}  \\
+      \texttt{UCHAR MAX}  & ($\geq$255U)    & max value of an \texttt{unsigned char}
+      \\
+      \texttt{UINT\_MAX}  & ($\geq$65535U)  & max value of an \texttt{unsigned int}
+      \\
+      \texttt{ULONG\_MAX} & ($\geq$4294967295U) & max value of an \texttt{unsigned long}   \\
+      \texttt{USHRT\_MAX} & ($\geq$65535U)  & max value of an \texttt{unsigned short}
+      \\
+      \midrule
+      \multicolumn{3}{p{0.9\textwidth}}{
+      Note: if the implementation treats \texttt{chars} as signed,
+      then the values of \texttt{CHAR\_MAX} and \texttt{CHAR\_MIN} are
+      the same as the equivalent \texttt{SCHAR} versions.  If not, then
+      the value of \texttt{CHAR\_MIN} is zero and the value of
+      \texttt{CHAR\_MAX} is equal to the value of
+      \texttt{UCHAR\_MAX}.}\\
+      \bottomrule
+      \caption{\label{tab:limits.h} \texttt{<limits.h>}}
+    \end{longtable}
+    %\end{adjustbox}
+    %\end{center}
+    % \begin{center}\textit{Table 9.1. \texttt\{<limits.h>\}}\end{center}
 
 
   
@@ -12798,30 +12876,33 @@ struct lconv *localeconv(void);
     minimum value is specified, there is either no minimum, or
     the value depends on another value.)
 
- \begin{adjustbox}{width={\textwidth}}
-   \begin{tabular}{llp{\textwidth}}
-     Name & Allowable value & Comment    \\
-     \texttt{FLT\_RADIX}   & ($\geq$2)  & the radix of exponent representation \\
-     \texttt{DBL\_DIG}     & ($\geq$10) & the number of digits of precision
-                                        in a \double{} \\
-     \texttt{DBL\_EPSILON} & ($\leq$1E-9) & minimum positive number such that 1.0 + x $\neq$ 1.0    \\
-     \texttt{DBL\_MANT\_DIG} & (--) & the number of base \texttt{FLT\_RADIX} digits in the mantissa part of a \double{}   \\
-     \texttt{DBL\_MAX} & ($\geq$1E+37) & max value of a \double{}   \\
-     \texttt{DBL\_MAX\_10\_EXP} & ($\geq$+37) & max value of exponent (base 10) of a \double{}    \\
-     \texttt{DBL\_MAX\_EXP} & (--) & max value of exponent (base \texttt{FLT\_RADIX})) of a \double{}    \\
-     \texttt{DBL\_MIN} & ($\leq$1E-37) & min value of a \double{}   \\
-     \texttt{DBL\_MIN\_10\_EXP} & ($\leq$37) & minimum value of exponent (base 10) of a \double{}   \\
-     \texttt{DBL\_MIN\_EXP} & (--) & min value of exponent part of a \double{} (base  \texttt{FLT\_RADIX})    \\
-     \texttt{FLT\_DIG} & ($\geq$6) & the number of digits of precision in a \float{}  \\
-     \texttt{FLT\_EPSILON} & ($\leq$1E-5) & minimum positive number such that 1.0 + x $\neq$ 1.0 \\
-     \texttt{FLT\_MANT\_DIG} & (--) & the number of base \texttt{FLT\_RADIX} digits in the mantissa of a \float{} \\
-     \texttt{FLT\_MAX} & ($\geq$1E+37) & max value of a \float{}  \\
-     \texttt{FLT\_MAX\_10\_EXP} & ($\geq$+37) & max value (base 10) of exponent part of a \float{}    \\
-     \texttt{FLT\_MAX\_EXP} & (--) & max value (base \texttt{FLT\_RADIX}) of exponent part of a \float{} \\
-     \texttt{FLT\_MIN} & ($\leq$1E-37) & min value of a \float{} \\
-     \texttt{FLT\_MIN\_10\_EXP} & ($\leq$-37) & min value (base 10) of exponent part of a \float{}   \\
-     \texttt{FLT\_MIN\_EXP} & (--) & min value (base \texttt{FLT\_RADIX}) of exponent part of a \float{}  \\
-     \texttt{FLT\_ROUNDS} & (0) & affects rounding of floating point addition:
+ %\begin{adjustbox}{width={\textwidth}}
+    \begin{longtable}{llp{0.5\textwidth}}
+      \hspace{0pt} \\
+      \toprule
+      Name                        & Allowable value & Comment    \\
+      \midrule
+      \texttt{FLT\_RADIX}         & ($\geq$2)       & the radix of exponent representation \\
+      \texttt{DBL\_DIG}           & ($\geq$10)      & the number of digits of precision
+                                        in a \double \\
+      \texttt{DBL\_EPSILON}       & ($\leq$1E-9)    & minimum positive number such that 1.0 + x $\neq$ 1.0    \\
+      \texttt{DBL\_MANT\_DIG}     & (--)            & the number of base \texttt{FLT\_RADIX} digits in the mantissa part of a \double   \\
+      \texttt{DBL\_MAX}           & ($\geq$1E+37)   & max value of a \double   \\
+      \texttt{DBL\_MAX\_10\_EXP}  & ($\geq$+37)     & max value of exponent (base 10) of a \double{}    \\
+      \texttt{DBL\_MAX\_EXP}      & (--)            & max value of exponent (base \texttt{FLT\_RADIX})) of a \double    \\
+     \texttt{DBL\_MIN}            & ($\leq$1E-37)   & min value of a \double{}   \\
+     \texttt{DBL\_MIN\_10\_EXP}   & ($\leq$37)      & minimum value of exponent (base 10) of a \double{}   \\
+     \texttt{DBL\_MIN\_EXP}       & (--)            & min value of exponent part of a \double{} (base  \texttt{FLT\_RADIX})    \\
+     \texttt{FLT\_DIG}            & ($\geq$6)       & the number of digits of precision in a \float{}  \\
+      \texttt{FLT\_EPSILON}       & ($\leq$1E-5)    & minimum positive number such that 1.0 + x $\neq$ 1.0 \\
+      \texttt{FLT\_MANT\_DIG}     & (--)            & the number of base \texttt{FLT\_RADIX} digits in the mantissa of a \float{} \\
+      \texttt{FLT\_MAX}           & ($\geq$1E+37)   & max value of a \float{}  \\
+      \texttt{FLT\_MAX\_10\_EXP}  & ($\geq$+37)     & max value (base 10) of exponent part of a \float{}    \\
+      \texttt{FLT\_MAX\_EXP}      & (--)            & max value (base \texttt{FLT\_RADIX}) of exponent part of a \float{} \\
+      \texttt{FLT\_MIN}           & ($\leq$1E-37)   & min value of a \float{} \\
+      \texttt{FLT\_MIN\_10\_EXP}  & ($\leq$-37)     & min value (base 10) of exponent part of a \float{}   \\
+      \texttt{FLT\_MIN\_EXP}      & (--)            & min value (base \texttt{FLT\_RADIX}) of exponent part of a \float{}  \\
+      \texttt{FLT\_ROUNDS}        & (0)             & affects rounding of floating point addition:
 
       \begin{description}
        \item[-1] indeterminate
@@ -12832,18 +12913,20 @@ struct lconv *localeconv(void);
       \end{description}
       any other value is implementation defined.    \\
 
-     \texttt{LDBL\_DIG} & ($\geq$10) & the number of digits of precision in a \texttt{long double}    \\
-     \texttt{LDBL\_EPSILON} & ($\leq$1E-9) & minimum positive number such that 1.0 + x $\neq$= 1.0    \\
-     \texttt{LDBL\_MANT\_DIG} & (--) & the number of base \texttt{FLT\_RADIX} digits in the mantissa part of a \texttt{long double} \\
-     \texttt{LDBL\_MAX} & ($\geq$1E+37) & max value of a \texttt{long double} \\
-     \texttt{LDBL\_MAX\_10\_EXP} & ($\geq$+37) &  max value of exponent (base 10) of a \texttt{long double} \\
-     \texttt{LDBL\_MAX\_EXP} & (--) & max value of exponent (base \texttt{FLT\_RADIX}) of a \texttt{long double} \\
-     \texttt{LDBL\_MIN} & ($\leq$1E-37) & minimum value of a \texttt{long double} \\
-     \texttt{LDBL\_MIN\_10\_EXP} & ($\leq$-37) & min value of exponent part (base 10) of a \texttt{long double} \\
-     \texttt{LDBL\_MIN\_EXP} & (--) & min value of exponent part of a \texttt{long double} (base \texttt{FLT\_RADIX})    \\
-\end{tabular}
-\end{adjustbox}
-\begin{center}\textit{Table 9.2. \texttt\{<float.h>\}}\end{center}
+      \texttt{LDBL\_DIG}          & ($\geq$10)    & the number of digits of precision in a \texttt{long double}    \\
+      \texttt{LDBL\_EPSILON}      & ($\leq$1E-9)  & minimum positive number such that 1.0 + x $\neq$= 1.0    \\
+      \texttt{LDBL\_MANT\_DIG}    & (--)          & the number of base \texttt{FLT\_RADIX} digits in the mantissa part of a \texttt{long double} \\
+      \texttt{LDBL\_MAX}          & ($\geq$1E+37) & max value of a \texttt{long double} \\
+      \texttt{LDBL\_MAX\_10\_EXP} & ($\geq$+37)   &  max value of exponent (base 10) of a \texttt{long double} \\
+      \texttt{LDBL\_MAX\_EXP}     & (--)          & max value of exponent (base \texttt{FLT\_RADIX}) of a \texttt{long double} \\
+      \texttt{LDBL\_MIN}          & ($\leq$1E-37) & minimum value of a \texttt{long double} \\
+      \texttt{LDBL\_MIN\_10\_EXP} & ($\leq$-37)   & min value of exponent part (base 10) of a \texttt{long double} \\
+      \texttt{LDBL\_MIN\_EXP}     & (--)          & min value of exponent part of a \texttt{long double} (base \texttt{FLT\_RADIX})    \\
+      \bottomrule
+      \caption{\label{tab:float.h} \texttt{<float.h>}}
+\end{longtable}
+%\end{adjustbox}
+%\begin{center}\textit{Table 9.2. \texttt{<float.h>}}\end{center}
 
 
   
@@ -13714,26 +13797,30 @@ FILE *fopen(const char *pathname, const char *mode);
     the end of the modes.
 
 
-   \begin{tabular}{llllll}
-     Mode           & Type of file & Read & Write & Create & Truncate \\
-     \texttt{"r"}   & text   & yes & no  & no  & no  \\
-     \texttt{"rb"}  & binary & yes & no  & no  & no  \\
-     \texttt{"r+"}  & text   & yes & yes & no  & no  \\
-     \texttt{"r+b"} & binary & yes & yes & no  & no  \\
-     \texttt{"rb+"} & binary & yes & yes & no  & no  \\
-     \texttt{"w"}   & text   & no  & yes & yes & yes \\
-     \texttt{"wb"}  & binary & no  & yes & yes & yes \\
-     \texttt{"w+"}  & text   & yes & yes & yes & yes \\
-     \texttt{"w+b"} & binary & yes & yes & yes & yes \\
-     \texttt{"wb+"} & binary & yes & yes & yes & yes \\
-     \texttt{"a"}   & text   & no  & yes & yes & no  \\
-     \texttt{"ab"}  & binary & no  & yes & yes & no  \\
-     \texttt{"a+"}  & text   & yes & yes & yes & no  \\
-     \texttt{"a+b"} & binary & no  & yes & yes & no  \\
-     \texttt{"ab+"} & binary & no  & yes & yes & no  \\
-   \end{tabular}
-
-\begin{center}\textit{Table 9.3. File opening modes}\end{center}
+    \begin{longtable}{llllll}
+      \hspace{0pt} \\
+      \toprule
+      Mode           & Type of file & Read & Write & Create & Truncate \\
+      \midrule
+      \texttt{"r"}   & text   & yes & no  & no  & no  \\
+      \texttt{"rb"}  & binary & yes & no  & no  & no  \\
+      \texttt{"r+"}  & text   & yes & yes & no  & no  \\
+      \texttt{"r+b"} & binary & yes & yes & no  & no  \\
+      \texttt{"rb+"} & binary & yes & yes & no  & no  \\
+      \texttt{"w"}   & text   & no  & yes & yes & yes \\
+      \texttt{"wb"}  & binary & no  & yes & yes & yes \\
+      \texttt{"w+"}  & text   & yes & yes & yes & yes \\
+      \texttt{"w+b"} & binary & yes & yes & yes & yes \\
+      \texttt{"wb+"} & binary & yes & yes & yes & yes \\
+      \texttt{"a"}   & text   & no  & yes & yes & no  \\
+      \texttt{"ab"}  & binary & no  & yes & yes & no  \\
+      \texttt{"a+"}  & text   & yes & yes & yes & no  \\
+      \texttt{"a+b"} & binary & no  & yes & yes & no  \\
+      \texttt{"ab+"} & binary & no  & yes & yes & no  \\
+      \bottomrule
+      \caption{\label{tab:modeFileOpen} File opening modes}
+     \end{longtable}
+     % \begin{center}\textit{Table 9.3. File opening modes}\end{center}
 
 
    Beware that some implementations of binary files may pad the last record
@@ -13846,15 +13933,20 @@ void setbuf(FILE *stream, char *buf);
     \texttt{stream} will be buffered (see Table 9.4).
 
 
-   \begin{tabular}{lp{0.8\textwidth}}
+   \begin{longtable}{lp{0.8\textwidth}}
+     \hspace{0pt} \\
+     \toprule
      Value & Effect    \\
+     \midrule
      \texttt{\_IONBF} & Do not buffer I/O    \\
      \texttt{\_IOFBF} & Fully buffer I/O    \\
      \texttt{\_IOLBF} & Line buffer: flush  buffer  when  full,
                         when  newline  is written
                         or when a read is requested.    \\
-   \end{tabular}
-   \begin{center}\textit{Table 9.4. Type of buffering}\end{center}
+     \bottomrule
+     \caption{\label{tab:typeBuf} Type of buffering}
+    \end{longtable}
+    % \begin{center}\textit{Table 9.4. Type of buffering}\end{center}
 
 
    The \texttt{buf} argument can be a null pointer,  in  which  case  an
@@ -14027,9 +14119,12 @@ int fflush(FILE *stream);
    \item[conversion] See Table 9.5.
    \end{description}
 
-    \begin{adjustbox}{width={\textwidth}}
-      \begin{tabular}{lp{0.7\textwidth}p{0.15\textwidth}}
+    %\begin{adjustbox}{width={\textwidth}}
+      \begin{longtable}{lp{0.65\textwidth}p{0.15\textwidth}}
+        \hspace{0pt} \\
+        \toprule
         Specifier & Effect & Default precision    \\
+        \midrule
         \texttt{d} & signed decimal & 1    \\
         \texttt{i} & signed decimal & 1    \\
         \texttt{u} & unsigned decimal & 1    \\
@@ -14078,10 +14173,11 @@ int fflush(FILE *stream);
                      the integer. &     \\
 
         \texttt{\%} & A \texttt{\%} & --        \\
-\end{tabular}
-\end{adjustbox}
-
-\begin{center}\textit{Table 9.5. Conversions}\end{center}
+        \bottomrule
+        \caption{\label{tab:conv} Conversions}
+      \end{longtable}
+      % \end{adjustbox}
+      % \begin{center}\textit{Table 9.5. Conversions}\end{center}
 
 
    The functions that use these formats are described in
@@ -14102,46 +14198,40 @@ int vprintf(const char *format, va list arg);
 int vsprintf(char *s, const char *format, va list arg);
 \end{Verbatim}
 
-    \begin{adjustbox}{width={\textwidth}}
-      \begin{tabular}{lp{0.85\textwidth}}
-        Name & Purpose    \\
-
-        \texttt{fprintf} & General formatted output  as  described.
-                           Output  is written to the file indicated
-                           by \texttt{stream}.    \\
-
-        \texttt{printf} & Identical  to  \texttt{fprintf}  with   a   first
-                          argument equal to \texttt{stdout}.
-        \\
-        
-        \texttt{sprintf} & Identical to  \texttt{fprintf}  except  that  the
-                           output  is  not  written  to a file, but
-                           written into the character array pointed
-                           to by \texttt{s}.
-        \\
-
-        \texttt{vfprintf} & Formatted output  as  for  \texttt{fprintf},  but
-                            with the variable argument list replaced
-                            by arg which must have been  initialized
-                            by  \texttt{va\_start}.
-                            \texttt{va\_end}  is not called by this function.
-    \\
-
-        \texttt{vprintf} & Identical  to  \texttt{vfprintf}  with  a   first
-                           argument equal to \texttt{stdout}.
-        \\
-
-        \texttt{vsprintf} & Formatted output  as  for  \texttt{sprintf},  but
-                            with the variable argument list replaced
-                            by \texttt{arg} which must have been  initialized
-                            by  \texttt{va\_start}.
-                            \texttt{va\_end}  is not called by this function.
-    \\
-      \end{tabular}
-    \end{adjustbox}
-    \begin{center}
-      \textit{Table 9.6. Functions performing formatted output}
-    \end{center}
+    %\begin{adjustbox}{width={\textwidth}}
+    \begin{longtable}{lp{0.8\textwidth}}
+      \hspace{0pt} \\
+      \toprule
+      Name & Purpose    \\
+      \midrule
+      \texttt{fprintf} & General formatted output  as  described.
+                         Output  is written to the file indicated
+                         by \texttt{stream}.    \\
+      \texttt{printf} & Identical  to  \texttt{fprintf}  with   a   first
+                        argument equal to \texttt{stdout}.        \\
+      \texttt{sprintf} & Identical to  \texttt{fprintf}  except  that  the
+                         output  is  not  written  to a file, but
+                         written into the character array pointed
+                         to by \texttt{s}.        \\
+      \texttt{vfprintf} & Formatted output  as  for  \texttt{fprintf},  but
+                          with the variable argument list replaced
+                          by arg which must have been  initialized
+                          by  \texttt{va\_start}.
+                          \texttt{va\_end}  is not called by this function.  \\
+      \texttt{vprintf} & Identical  to  \texttt{vfprintf}  with  a   first
+                         argument equal to \texttt{stdout}.  \\
+      \texttt{vsprintf} & Formatted output  as  for  \texttt{sprintf},  but
+                          with the variable argument list replaced
+                          by \texttt{arg} which must have been  initialized
+                          by  \texttt{va\_start}.
+                          \texttt{va\_end}  is not called by this function.  \\
+      \bottomrule
+      \caption{\label{tab:funFormOut} Functions performing formatted output}
+      \end{longtable}
+      % \end{adjustbox}
+      % \begin{center}
+      %   \textit{Table 9.6. Functions performing formatted output}
+      % \end{center}
 
 
    All of the above functions return the number  of  characters
@@ -14242,14 +14332,19 @@ int vsprintf(char *s, const char *format, va list arg);
    The size specifiers have the effect shown in Table 9.7.
 
 
-   \begin{tabular}{lll}
+   \begin{longtable}{lll}
+     \hspace{0pt} \\
+     \toprule
      Specifier  & Modifies           & Converts    \\
+     \midrule
      \texttt{l} & \texttt{d i o u x} & long int    \\
      \texttt{h} & \texttt{d i o u x} & short int    \\
      \texttt{l} & \texttt{e f}       & double    \\
      \texttt{L} & \texttt{e f}       & long double    \\
-   \end{tabular}
-   \begin{center}\textit{Table 9.7. Size specifiers}\end{center}
+     \bottomrule
+     \caption{\label{tab:sizeSpec} Size specifiers}
+   \end{longtable}
+   % \begin{center}\textit{Table 9.7. Size specifiers}\end{center}
 
 
    The functions are described below, with the following declarations:
@@ -15388,14 +15483,15 @@ Sun Sep 16 01:03:52 1973\n\0
 
 
     \begin{tabular}{ll}
+      \hline
       \texttt{\%a} & abbreviated weekday name     \\
-      \texttt{\%A} & full weekday name     \\
+      \texttt{\%A} & full weekday name        \\
       \texttt{\%b} & abbreviated month name     \\
-      \texttt{\%B} & full month name     \\
+      \texttt{\%B} & full month name                  \\
       \texttt{\%c} & date and time representation     \\
-      \texttt{\%d} & decimal day of month number 01-31     \\
-      \texttt{\%H} & hour 00-23 (24 hour format)     \\
-      \texttt{\%I} & hour 01-12 (12 hour format)     \\
+      \texttt{\%d} & decimal day of month number 01-31 \\
+      \texttt{\%H} & hour 00-23 (24 hour format)       \\
+      \texttt{\%I} & hour 01-12 (12 hour format)       \\
       \texttt{\%j} & day of year 001-366     \\
       \texttt{\%m} & month 01-12     \\
       \texttt{\%M} & minute 00-59     \\
@@ -15412,6 +15508,7 @@ Sun Sep 16 01:03:52 1973\n\0
       \texttt{\%Y} & year with century prefix     \\
       \texttt{\%Z} & timezone name, or no characters if no timezone exists  \\
       \texttt{\%\%} & a \texttt{\%} character     \\
+      \hline
     \end{tabular}
 
 
