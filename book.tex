@@ -275,7 +275,8 @@
    implementation. There is no such restriction on the programmer working in a
    freestanding environment, although it isn't a good idea to go using names
    that are used in the standard library, simply because it will mislead
-   readers of the program. Chapter 9 describes the names and uses
+   readers of the program.
+   Chapter~\ref{chap:libs} describes the names and uses
    of the library functions.
 
 
@@ -317,8 +318,8 @@
    then it goes on to discuss the standard libraries in depth. This means that
    in principle, if you felt so inclined, you could read the book as far as
    you like and stop, yet still have learnt a reasonably coherent subset of
-   the language. Previous experience of C will render Chapter 1 a
-   bit slow, but it is still worth persevering with it, if only once.
+   the language. Previous experience of C will render Chapter~\ref{chap:intro}
+   a bit slow, but it is still worth persevering with it, if only once.
 
 
  
@@ -400,7 +401,7 @@
    January 1991
   
 
- \chapter{An Introduction to C}
+ \chapter{An Introduction to C}\label{chap:intro}
 
 
         \section{The form of a C program}
@@ -452,8 +453,8 @@
    systems, it would be quicker to recompile everything in one go than to have
    to use the loader: Ada has sometimes been quoted as an example of this
    effect occurring. For C, the work that has to be done by the loader is not
-   large and the approach is a sensible one. Figure 1.1 shows the
-   way that this works.
+   large and the approach is a sensible one.
+   Figure 1.1 shows the way that this works.
 
 
    \begin{figure*}[htb]
@@ -577,7 +578,7 @@
     this was not the case. The rule used to be that comment could occur
     anywhere that space could occur: the rule is now that comment is space. The
     significance of the change is minor and eventually becomes apparent in
-    Chapter 7 where we discuss the \textbf{preprocessor}. A
+    Chapter~\ref{chap:preproc} where we discuss the \textbf{preprocessor}. A
     consequence of the rule for the end of comment is that you can't put a
     piece of comment inside another piece, because the \textit{first}
     \texttt{*/} pair will finish all of it. This is a minor nuisance, but
@@ -703,7 +704,7 @@ if(timer >= 60){
      \texttt{show\_message} is a function which takes no arguments and
      returns no values. This demonstrates one of the changes made by the
      Standard: it is an example of a \textbf{function prototype}, a subject
-     which Chapter 4 discusses in detail. It isn't always
+     which Chapter~\ref{chap:funcs} discusses in detail. It isn't always
      necessary to declare functions in advance--C will use some (old)
      default rules in such cases--but it is now strongly recommended that
      you \textit{do} declare them in advance. The distinction between a
@@ -876,7 +877,8 @@ a newline in it as far as the compiler is concerned"
     are `wider' than U.S. ASCII, such as the shift-JIS representation
     used in Japan, the Standard now allows \textbf{multibyte characters} to
     be present in strings and comments. The Standard defines the
-    96 characters that are the alphabet of C (see Chapter 2). If your system supports an extended character set, the only
+    96 characters that are the alphabet of C (see Chapter~\ref{chap:varArith}).
+    If your system supports an extended character set, the only
     place that you may use these extended characters is in strings, character
     constants, comment and the names of \textbf{header files}. Support for
     extended character sets is an implementation defined feature, so you will
@@ -903,7 +905,7 @@ a newline in it as far as the compiler is concerned"
     noticed that the function is \textit{not} declared to be
     \void. There is a good reason for this: it returns a proper
     value. Don't worry about its arguments yet; they are discussed in
-    Chapter 10.
+    Chapter~\ref{chap:completeCprg}.
 
 
    The most important thing about \texttt{main} is that it is the first
@@ -1018,8 +1020,8 @@ count < 10
 function_name(first_arg, second_arg, third_arg);
 \end{Verbatim}
 
-   and so on. The call of \texttt{printf} is another example. More is
-    explained in Chapter 4.
+and so on. The call of \texttt{printf} is another example.
+More is explained in Chapter~\ref{chap:funcs}.
 
 
    The last statement in the loop is another assignment statement. It adds
@@ -1258,7 +1260,7 @@ else
     operator is the way to get the truncated remainder. \texttt{5\%2} gives
     \texttt{1}, \texttt{5\%3} gives \texttt{2}. The signs of the
     remainder and quotient depend on the divisor and dividend in a way that is
-    defined in the Standard and shown in Chapter 2.
+    defined in the Standard and shown in Chapter~\ref{chap:varArith}.
 
 
   
@@ -1417,14 +1419,16 @@ else
 
   This chapter has introduced many of the basics of the language although
    informally. Functions, in particular, form the basic building block for C.
-   Chapter 4 provides a full description of these fundamental
+   Chapter~\ref{chap:funcs} provides a full description of these fundamental
    objects, but you should by now understand enough about them to follow their
    informal use in the intervening material.
 
 
   Although the idea of library functions has been introduced, it has not
    been possible to illustrate the extent of their importance to the C
-   application programmer. The Standard Library, described in Chapter 9, is \textit{extremely} important, both in the way that it helps to
+   application programmer.
+   The Standard Library, described in Chapter~\ref{chap:libs},
+   is \textit{extremely} important, both in the way that it helps to
    improve the portability of programs intended for general use and also in
    the aid to productivity that these useful functions can provide.
 
@@ -1479,7 +1483,7 @@ else
    not trivial either.
 
 
- \chapter{Variables and Arithmetic}
+ \chapter{Variables and Arithmetic}\label{chap:varArith}
 
 
         \section{Some fundamentals}
@@ -2050,7 +2054,7 @@ int egral();
 
   
 
-  You may remember that in Chapter 1 we said that you have to
+  You may remember that in Chapter~\ref{chap:intro} we said that you have to
    declare the names of things before you can use them (the only exceptions to
    this rule are the names of functions returning \kint, because
    they are declared by default, and the names of \textbf{labels}). You can
@@ -2147,7 +2151,7 @@ int def_func(void){
    about them and they don't get as complicated as the integer types. The
    Standard breaks new ground by laying down some basic guarantees on the
    precision and range of the real numbers; these are found in the header file
-   \textbf{float.h} which is discussed in detail in Chapter 9.
+   \textbf{float.h} which is discussed in detail in Chapter~\ref{chap:libs}.
    For some users this is extremely important information, but it is of a
    highly technical nature and is likely only to be fully understood by
    numerical analysts.
@@ -2684,7 +2688,7 @@ int def_func(void){
 
 
    A full description of the format codes that you can use with printf is
-    given in Chapter 9.
+    given in Chapter~\ref{chap:libs}.
 
 
   
@@ -2835,7 +2839,7 @@ x = a+b*-c;
      the shift, unary \texttt{+}, \texttt{-}, and \texttt{\~}
      operators. They are also applied when the expression in question is an
      argument to a function but no type information has been provided as part
-     of a function prototype, as explained in Chapter 4.
+     of a function prototype, as explained in Chapter~\ref{chap:funcs}.
 
 
    
@@ -4010,7 +4014,9 @@ a+(b+c);
     an external variable that is also used in the expression. These are
     generally known as `side effects'. C makes almost no promise
     that side effects will occur in a predictable order within a single
-    expression. (The discussion of `sequence points' in Chapter 8 will be of interest if you care about this.)
+    expression.
+    (The discussion of `sequence points' in Chapter~\ref{chap:special}
+    will be of interest if you care about this.)
 
 
   
@@ -4440,7 +4446,7 @@ then
     \item \texttt{c = (i <{}< - --f) \& 0xf;}
    \end{enumerate}
 
- \chapter{Control of Flow and Logical Expressions}
+ \chapter{Control of Flow and Logical Expressions}\label{chap:cntrlFlow}
 
 
         \section{The Task ahead}
@@ -4642,7 +4648,7 @@ if (expression)
     statement
 \end{Verbatim}
 
-   As Chapter 1 has said already, this is now ambiguous. It is
+   As Chapter~\ref{chap:intro} has said already, this is now ambiguous. It is
     not clear, except as indicated by the indentation, which of the
     \kif{}s is responsible for the \kelse. If we follow
     the rules that the previous example suggests, then the second
@@ -4659,8 +4665,8 @@ if (expression)
 
    To prevent any unwanted association between an \kelse{} and an
     \kif{} just above it, the if can be hidden away by using a
-    compound statement. To repeat the example in Chapter 1, here
-    it is.
+    compound statement.
+    To repeat the example in Chapter~\ref{chap:intro}, here it is.
 
 
    \begin{Verbatim}
@@ -4926,7 +4932,8 @@ default:        statements
    The expression is evaluated and its value is compared with
     all of the const1 etc. expressions, which must all evaluate
     to different constant values (strictly they are \textbf{integral constant
-    expressions}, see Chapter 6 and below). If any of them
+      expressions}, see Chapter~\ref{chap:structTypes} and below).
+    If any of them
     has the same value as the expression then the statement
     following the \case{} label is selected for execution. If the
     \default{} is present, it will be selected when there is no
@@ -4996,9 +5003,9 @@ default:        statements
    \subsubsection{Integral Constant Expression}
     
 
-    Although Chapter 6 deals with constant expressions, it is
-     worth looking briefly at what an integral constant expression is, since
-     that is what must follow the \case{} labels in a
+   Although Chapter~\ref{chap:structTypes} deals with constant expressions,
+   it is worth looking briefly at what an integral constant expression is,
+   since that is what must follow the \case{} labels in a
      \switch{} statement. Loosely speaking, it is any expression
      that does not involve any value-changing operation (like increment or
      assignment), function calls or comma operators. The operands in the
@@ -5412,7 +5419,7 @@ expression1?expression2:expression3
 
 
    After evaluating the first operand there is one of the \textbf{sequence
-    points} described in Chapter 8.
+    points} described in Chapter~\ref{chap:special}.
 
 
 
@@ -5445,7 +5452,7 @@ expression-1,expression-2,expression-3,...,expression-n
 
 
    After evaluating each operand there is one of the \textbf{sequence
-    points} described in Chapter 8.
+    points} described in Chapter~\ref{chap:special}.
 
 
   
@@ -5514,7 +5521,7 @@ expression-1,expression-2,expression-3,...,expression-n
    another?
 
 
- \chapter{Functions}
+ \chapter{Functions}\label{chap:funcs}
 
 
         \section{Changes}
@@ -5963,7 +5970,7 @@ non_space(void) {
     not having them, so the only time you will need to use these rules is if
     you are being adventurous and using functions with a variable number of
     arguments, using the ellipsis notation in the prototype that is
-    explained in Chapter 9.
+    explained in Chapter~\ref{chap:libs}.
 
 
    The rules mention the \textbf{default argument promotions and compatible
@@ -5971,7 +5978,7 @@ non_space(void) {
     are:
 
    \begin{itemize}
-    \item Apply the integral promotions (see Chapter 2) to the
+    \item Apply the integral promotions (see Chapter~\ref{chap:varArith}) to the
      value of each argument
     \item If the type of the argument is \float{} it is converted to
      \double{}
@@ -5979,7 +5986,7 @@ non_space(void) {
    The introduction of prototypes (amongst other things) has increased
     the need for precision about `compatible types', which was not
     much of an issue in Old C. The full list of rules for type compatibility
-    is deferred until Chapter 8, because we suspect that most C
+    is deferred until Chapter~\ref{chap:special}, because we suspect that most C
     programmers will never need to learn them. For the moment, we will
     simply work on the basis that if two types are the same, they are
     indisputably compatible.
@@ -6122,7 +6129,7 @@ int
 vfunc(int x, float y, ...);
 \end{Verbatim}
 
-      Chapter 9 describes how to write this sort of
+      Chapter~\ref{chap:libs} describes how to write this sort of
        function.
 
      
@@ -6292,7 +6299,7 @@ after i=5
    
    It is possible to write functions that take \textbf{pointers} as
     their arguments, giving a form of call by reference. This is described
-    in Chapter 5 and \textit{does} allow functions to change
+    in Chapter~\ref{chap:structTypes} and \textit{does} allow functions to change
     values in their callers.
 
   
@@ -6532,7 +6539,7 @@ int printf(const char *, ...);
     variable \texttt{i}) is a definition unless it has the keyword
     \extern{} in front of it, when it is a declaration only.
   \end{itemize}
-  Chapter 8 revisits the definition and declaration criteria
+  Chapter~\ref{chap:special} revisits the definition and declaration criteria
    to a depth that will cause decompression sickness when you surface.
 
 
@@ -6577,7 +6584,7 @@ int printf(const char *, ...);
     regular block structure gets blown to pieces with this, which although
     at a first glance is simple and obvious, does some very nasty things to
     the fabric of the language. We'll leave its nasty problems to
-    Chapter 8, since they only rear up if you deliberately
+    Chapter~\ref{chap:special}, since they only rear up if you deliberately
     start to do perverse things with it and then say `what does this
     mean'? We've already seen it used to ensure that the declaration of
     something at the outer block level (the external level) of the program
@@ -6644,7 +6651,7 @@ void another_func(void) {
     communicate that anyway, so the argument is a bit hard to maintain.
 
 
-   Chapter 8 is the place to find out more. There's a set of
+   Chapter~\ref{chap:special} is the place to find out more. There's a set of
     guidelines for how to get the results that are most often wanted from
     multi-file construction, and a good deal more detail on what happens
     when you mix \extern, \static{} and internal and
@@ -7529,7 +7536,8 @@ for (i = 0; i < 20; i++)
 
    Of course, constants are not much use unless you can assign an initial
     value to them. We won't go into the rules about initialization here
-    (they are in Chapter 6), but for the moment just note that
+    (they are in Chapter~\ref{chap:structTypes}),
+    but for the moment just note that
     any declaration can also assign the value of a constant expression to
     the thing being declared. Here are some example declarations involving
     const:
@@ -7603,7 +7611,7 @@ const int *const cpci = &ci;
     but they do have to be stated.
 
 
-   Type qualifiers are given a further airing in Chapter 8.
+   Type qualifiers are given a further airing in Chapter~\ref{chap:special}.
 
 
   
@@ -8642,7 +8650,7 @@ if ((pi - cpi) != 1)
    
 
    The description of the behaviour of this operator when it is used with
-     pointers has already been given in Chapter 3.
+     pointers has already been given in Chapter~\ref{chap:cntrlFlow}.
 
 
   
@@ -8733,7 +8741,7 @@ if ((pi - cpi) != 1)
    else.
 
 
- \chapter{Structured Data Types}
+ \chapter{Structured Data Types}\label{chap:structTypes}
 
 
         \section{History}
@@ -9611,8 +9619,9 @@ enum ee{a,b,c} e_var, *ep;
    initialized at run time. The two categories are mutually exclusive.
 
 
-  Although they are related, storage duration and \textbf{linkage} (see
-   Chapter 4) are different and should not be confused.
+   Although they are related,
+   storage duration and \textbf{linkage} (see Chapter~\ref{chap:funcs})
+   are different and should not be confused.
 
 
   Compile-time initialization can only be done using \textbf{constant
@@ -9813,7 +9822,8 @@ char str[6] = "hello";
 
 
    A declaration inside a function (block scope) can, using various
-    techniques outlined in Chapter 4 and Chapter 8,
+   techniques
+   outlined in Chapter~\ref{chap:funcs} and Chapter~\ref{chap:special},
     be made to refer to an object that has either \textbf{external} or
     \textbf{internal linkage}. If you've managed to do that, and it's not
     likely to happen by accident, then you can't initialize the object as part
@@ -9915,7 +9925,7 @@ main() {
    elements in a doubly linked list?
 
 
-   \chapter{The Preprocessor}
+   \chapter{The Preprocessor}\label{chap:preproc}
 
 
    \section{Effect of the Standard}
@@ -10525,7 +10535,7 @@ SQR(3+4)
     defined.
 
 
-   This occasionally comes in handy. Chapter 9 points out
+   This occasionally comes in handy. Chapter~\ref{chap:libs} points out
     that some library functions may actually be macros, not functions, but
     by undefing their names you are guaranteed access to a real
     function.
@@ -11015,7 +11025,7 @@ else
    use?
 
 
- \chapter{Specialized Areas of C}
+ \chapter{Specialized Areas of C}\label{chap:special}
 
 
         \section{Government Health Warning}
@@ -11050,7 +11060,7 @@ else
 
   
 
-  Chapter 4 introduced the concepts of \textbf{scope} and
+  Chapter~\ref{chap:funcs} introduced the concepts of \textbf{scope} and
    \textbf{linkage}, showing how they can be combined to control the
    accessibility of things throughout a program. We deliberately gave
    a vague description of exactly what constitutes a \textbf{definition}
@@ -11078,7 +11088,7 @@ else
   \end{itemize}
 
   and describes what they mean in a fairly readable way (for a standard).
-   Scope and linkage have already been described in Chapter 4,
+   Scope and linkage have already been described in Chapter~\ref{chap:funcs},
    although we do present a review of them below.
 
 
@@ -11246,7 +11256,7 @@ else
 
     Internal \static{} variables retain their values between
      calls of the function that contains them, which is useful in certain
-     circumstances (see Chapter 4).
+     circumstances (see Chapter~\ref{chap:funcs}).
 
 
    
@@ -12160,7 +12170,7 @@ a[i] = i++;
    two features will be a very interesting question.
 
 
- \chapter{Libraries}
+ \chapter{Libraries}\label{chap:libs}
 
 
         \section{Introduction}
@@ -12244,7 +12254,7 @@ a[i] = i++;
 
    A last general point is that many of  the  library  routines
     may be implemented as macros, provided that there will be no
-    problems to do with side-effects (as Chapter 7 describes).
+    problems to do with side-effects (as Chapter~\ref{chap:preproc} describes).
     The  Standard  guarantees  that,  if  a function \textit{is} normally
     implemented as a macro, there will also be a  true  function
     provided  to  do  the  same  job.  To use the real function,
@@ -12331,7 +12341,8 @@ if((fp = fopen("somefile", "r")) != NULL){
 
 
    The expression \texttt{s\_tr.c} must be capable of  evaluation  as  an
-    address  constant  (see  Chapter 6).   If  the member whose
+   address  constant  (see  Chapter~\ref{chap:structTypes}).
+   If  the member whose
     offset you want is a bitfield,  then  you're  out  of  luck;
     offsetof has undefined behaviour in that case.
 
@@ -15577,7 +15588,7 @@ Sun Sep 16 01:03:52 1973\n\0
    unhosted environments.
 
 
- \chapter{Complete Programs in C}
+ \chapter{Complete Programs in C}\label{chap:completeCprg}
 
 
         \section{Putting it all together}
@@ -16653,10 +16664,11 @@ getnum(){
 
   \subsubsection*{Exercise 3.7}
 
-   Because the scope of a label doesn't extend outside the function that it
-    lives in, you can't use goto to jump from one function to another. Using
-    the \texttt{longjmp} library routine, described in Chapter 9, a form of function-to-function jump is supported, but not
-    a completely general one.
+  Because the scope of a label doesn't extend outside the function that it
+  lives in, you can't use goto to jump from one function to another. Using
+  the \texttt{longjmp} library routine, described in Chapter~\ref{chap:libs},
+  a form of function-to-function jump is supported, but not
+  a completely general one.
 
 
   
