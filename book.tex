@@ -1522,7 +1522,7 @@ else
    contents once, and make a mental note to come back to it later on.
 
 
-  \subsection{Basic Alphabet}
+  \subsection{Basic Alphabet}\label{subsec:alpha}
    
 
    Few computer languages bother to define their alphabet rigorously.
@@ -1744,7 +1744,7 @@ a b c <SI> a b g <SO> x y
     \texttt{wchar\_t}type. To use this, you must include the
     <stddef.h> header, because \texttt{wchar\_t} is simply defined as
     an alternative name for one of C's other types. We discuss it further in
-    Section 2.8.
+    Section~\ref{sec:exprArith}.
 
 
   
@@ -2196,7 +2196,9 @@ int def_func(void){
    implicit conversions invoked which can be used to work out what the overall
    type of the result will be. These rules are quite important and are known
    as the \textbf{usual arithmetic conversions}; it will be worth committing
-   them to memory later. The full set of rules is described in Section 2.8; for the moment, we will investigate only the ones that involve
+   them to memory later.
+   The full set of rules is described in Section~\ref{sec:exprArith};
+   for the moment, we will investigate only the ones that involve
    mixing \float, \double{} and \texttt{long double}
    to see if they make sense.
 
@@ -2688,7 +2690,7 @@ int def_func(void){
   
 
  
-        \section{Expressions and arithmetic}
+        \section{Expressions and arithmetic}\label{sec:exprArith}
         
 
   
@@ -2779,7 +2781,9 @@ x = a+b*-c;
     \item Conversions between floating and integral types
    \end{itemize}
 
-   Conversions between floating (real) types were discussed in Section 2.8; what we do next is to specify how the other conversions are
+   Conversions between floating (real) types
+   were discussed in Section~\ref{sec:exprArith};
+   what we do next is to specify how the other conversions are
     to be performed, then look at \textit{when} they are required. You will
     need to learn them by heart if you ever intend to program seriously
     in C.
@@ -3068,7 +3072,9 @@ x = a+b*-c;
 
      \item The null character has the value of zero.
 
-     \item Each member of the basic character set (see Section 2.2.1) is encoded in a \texttt{wchar\_t} with the same value
+     \item Each member of the basic character set
+       (see Section~\ref{subsec:alpha})
+       is encoded in a \texttt{wchar\_t} with the same value
       as it has in a \kchar.
     \end{itemize}
 
@@ -3810,7 +3816,8 @@ f2 = ++f1 + ++f1;
         \texttt{,}      & left to right & binary    \\
         \multicolumn{3}{p{0.9\textwidth}}{1. Parentheses are for expression grouping, \textit{not}
         function call.}\\
-        \multicolumn{3}{p{0.9\textwidth}}{2. This is unusual. See Section 3.4.1.}\\
+        \multicolumn{3}{p{0.9\textwidth}}
+        {2. This is unusual. See Section~\ref{subsec:ternaryOp}.}\\
         \bottomrule
       \end{tabular}
       \caption{\label{tab:precAssoc}Operator precedence and associativity}
@@ -4371,7 +4378,7 @@ L'like this'
    should \textit{not} try to remember it all, but to go on now and to gain
    confidence with the rest of the language. After two or three months'
    practice at using the easier parts of the language, the time really does
-   come when you can no longer afford to ignore Section 2.8.
+   come when you can no longer afford to ignore Section~\ref{sec:exprArith}.
 
 
   Many highly experienced C programmers never bother to learn the
@@ -5304,7 +5311,7 @@ if (a<=b || c>=d)...
    types, which makes them look more complicated than they really are.
 
 
-  \subsection{The ?: operator}
+  \subsection{The ?: operator}\label{subsec:ternaryOp}
    
 
    Like playing the accordion, this is easier to demonstrate than to
@@ -6737,7 +6744,7 @@ void another_func(void) {
 
 
   Functions taking a variable number of arguments can be written portably
-   if you use the methods described in Section 9.9.
+   if you use the methods described in Section~\ref{sec:varargs}.
 
 
   Functions are the cornerstone of C. Of all the changes to the language,
@@ -7332,7 +7339,7 @@ date(day, month);
 
   
 
-  \subsection{Arrays and pointers}
+  \subsection{Arrays and pointers}\label{subsec:arrPtr}
    
 
    Array elements are just like other variables: they have addresses.
@@ -7420,7 +7427,7 @@ for (i = 0; i < 20; i++)
 
 
    If you have found things easy so far, read on. If not, it's a good
-    idea to skip to Section 5.3.3. What follows, while
+    idea to skip to Section~\ref{subsec:qualTypes}. What follows, while
     interesting, isn't essential. It has been known to frighten even
     experienced C programmers.
 
@@ -7478,7 +7485,7 @@ for (i = 0; i < 20; i++)
 
   
 
-  \subsection{Qualified types}
+  \subsection{Qualified types}\label{subsec:qualTypes}
    
 
    If you are confident that you have got a good grasp of the basic
@@ -9065,7 +9072,7 @@ main() {
      \texttt{struct wp\_char}, then
      \texttt{(char *)item == \&item.wp\_cval}.
 
-    \item Bit fields (see Section 6.4) don't actually have
+    \item Bit fields (see Section~\ref{sec:bitfields}) don't actually have
      addresses, but are conceptually packed into \textbf{units} which obey
      the rules above.
    \end{itemize}
@@ -9424,7 +9431,7 @@ else search the tree indicated by the right pointer.
 
 
  
-        \section{Bitfields}
+        \section{Bitfields}\label{sec:bitfields}
         
 
   
@@ -11056,7 +11063,7 @@ else
   You'll probably find the interactions between these various elements to
    be both complex and confusing: that's because they are! We try to
    eliminate some of the confusion and give some useful rules of thumb in
-   Section 8.2.6 below--but to understand them, you still
+   Section 8.2.6 (reference does not exist) below--but to understand them, you still
    need to read the stuff in between at least once.
 
 
@@ -12261,7 +12268,7 @@ some function("Might be a macro\n");
     character set of US ASCII and where there are cultural
     dependencies such as the use of comma or full stop to
     indicate the decimal point.  Facilities have been provided
-    (see Section 9.4) for setting a program's idea of its
+    (see Section~\ref{sec:loc}) for setting a program's idea of its
     \textbf{locale}, which is used to control the behaviour of the
     library functions.
 
@@ -12569,7 +12576,7 @@ tolower('A') == 'a'
 
 
  
-        \section{Localization}
+        \section{Localization}\label{sec:loc}
         
 
   
@@ -13314,15 +13321,15 @@ abort(void) {
 
 
  
-        \section{Variable numbers of arguments}
+        \section{Variable numbers of arguments}\label{sec:varargs}
         
 
   
 
   It is often desirable to implement a function where the number of
    arguments is not known, or is not constant, when the function is written.
-   Such a function is \texttt{printf}, described in Section 9.11.  The following example shows the declaration of such
-   a function.
+   Such a function is \texttt{printf}, described in Section~\ref{sec:formIO}.
+   The following example shows the declaration of such a function.
 
 
   \VerbatimInput{example/example9-5.c}\begin{center}\textit{Example 9.5}\end{center}
@@ -14029,7 +14036,7 @@ int fflush(FILE *stream);
   
 
  
-        \section{Formatted I/O}
+        \section{Formatted I/O}\label{sec:formIO}
         
 
   
