@@ -459,7 +459,7 @@
 
    \begin{figure*}[htb]
      \centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/1.1}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/1.1_sepComp}
      \caption*{Diagram showing multiple files going from source, through           compilation, to object files, and being combined with libraries by           the loader to produce a program.}
      \caption{\label{fig:sepComp}Separate compilation}
    \end{figure*}
@@ -6950,7 +6950,7 @@ double ar[100];
 
 
    \begin{figure*}[htb]\centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.1}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.1_arr}
      \caption*{Diagram showing an array consisting of elements labelled 'ar[0]',           'ar[1]', etc., up to 'ar[99]'.}
      \caption{\label{fig:arr}100 element array}
    \end{figure*}
@@ -7011,7 +7011,7 @@ int t_d[2][3];
 
 
     \begin{figure*}\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.2}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.2_arr2}
       \caption*{Diagram showing a two dimensional array, with the 'outer' array            having two elements labelled 't\_d[0]' and 't\_d[1]', each with            three elements within it, labelled 't\_d[0][0]', etc.}
      \caption{\label{fig:arr2}Two-dimensional array, showing layout}
    \end{figure*}
@@ -7119,7 +7119,7 @@ int ar[5], *ip;
 
 
    \begin{figure*}[htb]\centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.3}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.3_arrPtr}
      \caption*{Diagram showing an array with four elements
        (labelled 'ar[0]' to 'ar[4]') and a pointer called 'ip'
        which does not currently have any connection to the array.}
@@ -7164,7 +7164,8 @@ ip = &ar[3];
 
 
     \begin{figure*}\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.4}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]
+      {figure/5.4_arrInitPtr}
       \caption*{Diagram showing an array with four elements
         (labelled 'ar[0]' to 'ar[4]') each of which has an undefined value,
         and a pointer called 'ip' which contains the address of 'ar[3]'.}
@@ -7286,7 +7287,8 @@ float f;
 
 
    \begin{figure*}[htb]\centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.5]{figure/5.5}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.5]
+     {figure/5.5_callDate}
      \caption*{Diagram showing the variables 'day' and 'month'
        which have undefined values,
        and the pointers 'day\_p' and 'month\_p' which contain their addresses.}
@@ -7304,11 +7306,13 @@ float f;
 
 
     \begin{figure*}[htb]\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.5]{figure/5.6}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.5]
+      {figure/5.6_callDateRet}
       \caption*{Diagram showing the same variables as Figure~\ref{fig:callDate},
         except that the 'day' and 'month'
         now have the values '12' and '5' respectively.}
-      \caption{\label{fig:callDateRet}Just as \texttt\{date\} is about to return}
+      \caption{\label{fig:callDateRet}
+        Just as \texttt\{date\} is about to return}
     \end{figure*}
 
 
@@ -7884,8 +7888,12 @@ secret[8] = 0;
 
 
     \begin{figure*}[htb]\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.7}
-      \caption*{Diagram showing an unnamed array of 'const char' values, where the            last item has the value '0', and showing that a 'const char *'            value that points to the first of them can be used as a string.}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]
+      {figure/5.7_string}
+      \caption*{Diagram showing an unnamed array of 'const char' values,
+        where the            last item has the value '0',
+        and showing that a 'const char *'            value
+        that points to the first of them can be used as a string.}
       \caption{\label{fig:string}Effect of using a string}
     \end{figure*}
 
@@ -9050,7 +9058,8 @@ main() {
 
 
     \begin{figure*}[htb]+\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.95]{figure/6.1}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.95]
+      {figure/6.1_struct}
       \caption*{Diagram showing the layout of the values in 'struct wp\_char',
         with boxes containing 'wp\_cval',
         an empty space of padding, 'wp\_font' and 'wp\_psize'.}
@@ -9105,7 +9114,8 @@ main() {
 
 
     \begin{figure*}[htb]\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]{figure/6.2}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]
+      {figure/6.2_linkedList}
       \caption*{Diagram showing a linked list of three items,
         with a pointer  labelled 'list head' pointing to the first item,
         and each item containing a 'data' value and a 'pointer' value
@@ -9292,7 +9302,8 @@ struct tree_node {
 
 
     \begin{figure*}[htb]\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]{figure/6.3}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]
+      {figure/6.3_tree}
       \caption*{A tree structure, made up of 7 items,
         each of which is labelled with a different number.
         Each item has two pointer values, labelled 'left\_p' and 'right\_p',
@@ -9998,7 +10009,8 @@ main() {
 
 
    \begin{figure*}[htb]\centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]{figure/7.1}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]
+     {figure/7.1_preProc}
      \caption*{Diagram showing source code
        passing through a preprocessor to become 'preprocessed source',
        which is then fed into the rest of the compiler.}
@@ -11513,8 +11525,12 @@ void func(int i, int j);
 
 
     \begin{figure*}\centering
-      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=1.0]{figure/8.1}
-      \caption*{Diagram showing the typical layout of a C source file, starting            with external linkage declarations, which are followed by internal            linkage declarations, and then functions at the end.}
+      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=1.0]
+      {figure/8.1_srcFile}
+      \caption*{Diagram showing the typical layout of a C source file,
+        starting with external linkage declarations,
+        which are followed by internal linkage declarations,
+        and then functions at the end.}
       \caption{\label{fig:srcFile}Layout of a source file}
     \end{figure*}
 
@@ -15719,7 +15735,8 @@ Sun Sep 16 01:03:52 1973\n\0
 
 
    \begin{figure*}\centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/10.1}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]
+     {figure/10.1_argPrg}
      \caption*{Diagram showing the relationship between 'argc' and 'argv'                and the strings that elements of 'argv' point to}
      \caption{\label{fig:argPrg}Arguments to a program}
    \end{figure*}
@@ -15734,7 +15751,8 @@ Sun Sep 16 01:03:52 1973\n\0
 
 
    \begin{figure*}\centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/10.2}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]
+     {figure/10.2_argPrgInc}
      \caption*{Diagram showing the changes
        to the arrangement in Figure~\ref{fig:argPrg}
        after incrementing 'argv' so that it points to the next
