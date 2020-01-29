@@ -459,8 +459,12 @@
 
    \begin{figure*}[htb]
      \centering
-     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/1.1_sepComp}
-     \caption*{Diagram showing multiple files going from source, through           compilation, to object files, and being combined with libraries by           the loader to produce a program.}
+     \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]
+     {figure/1.1_sepComp}
+     \caption*{Diagram showing multiple files going from source,
+       through compilation, to object files,
+       and being combined with libraries by the loader 
+       to produce a program.}
      \caption{\label{fig:sepComp}Separate compilation}
    \end{figure*}
 
@@ -1548,11 +1552,11 @@ else
     documented. Don't worry about it yet.
 
 
-   The Standard requires that an alphabet of 96 symbols is available
-    for C as follows:
+    The Standard requires that an alphabet of 96 symbols 
+    is available for C as follows in Table~\ref{tab:alphabetC}. 
 
     \begin{table}[htb]
-      \centering
+     \centering
       \begin{tabular}{p{0.9\textwidth}}
         \toprule
         \texttt{a b c d e f g h i j k l m n o p q r s t u v w x y z}    \\
@@ -1564,7 +1568,7 @@ else
         form feed, newline    \\
         \bottomrule
       \end{tabular}
-      \caption{\label{tab:alphaC}The Alphabet of C}
+      \caption{\label{tab:alphabetC}The Alphabet of C}
     \end{table}
 
 
@@ -2664,7 +2668,6 @@ int def_func(void){
     result printed: the behaviour of \texttt{printf} is undefined if the
     wrong format is given.
 
-
     \begin{table}[htb]
       \centering
       \begin{tabular}{ll}
@@ -2685,7 +2688,6 @@ int def_func(void){
       \caption{\label{tab:formatAdd}More format codes}
     \end{table}
     
-
 
    A full description of the format codes that you can use with printf is
     given in Chapter~\ref{chap:libs}.
@@ -3079,7 +3081,7 @@ x = a+b*-c;
      \item Each member of the basic character set
        (see Section~\ref{subsec:alpha})
        is encoded in a \texttt{wchar\_t} with the same value
-      as it has in a \kchar.
+       as it has in a \kchar.
     \end{itemize}
 
     There is further support for this method of encoding characters.
@@ -3354,14 +3356,14 @@ L"a string"[4]
        \centering
        \begin{tabular}{lll}
          \toprule
-         Operator    & Effect           & Conversions     \\
+         Operator      & Effect           & Conversions     \\
          \midrule
-         \texttt{\&} & bitwise AND      & usual arithmetic conversions     \\
-         \texttt{|}  & bitwise OR       & usual arithmetic conversions     \\
-         \texttt{\^} & Bitwise XOR      & usual arithmetic conversions     \\
+         \texttt{\&}   & bitwise AND      & usual arithmetic conversions     \\
+         \texttt{|}    & bitwise OR       & usual arithmetic conversions     \\
+         \texttt{\^}   & Bitwise XOR      & usual arithmetic conversions     \\
          \texttt{<{}<} & left shift       & integral promotions     \\
          \texttt{>{}>} & right shift      & integral promotions     \\
-         \texttt{\~} & one's complement & integral promotions     \\
+         \texttt{\~}   & one's complement & integral promotions     \\
          \bottomrule
        \end{tabular}
        \caption{\label{tab:bitwiseOps}Bitwise operators}
@@ -3826,7 +3828,6 @@ f2 = ++f1 + ++f1;
       \end{tabular}
       \caption{\label{tab:precAssoc}Operator precedence and associativity}
     \end{table}
-
 
 
 
@@ -4668,7 +4669,6 @@ if (expression)
     compound statement.
     To repeat the example in Chapter~\ref{chap:intro}, here it is.
 
-
    \begin{Verbatim}
 if (expression) {
     if (expression)
@@ -5006,13 +5006,13 @@ default:        statements
    Although Chapter~\ref{chap:structTypes} deals with constant expressions,
    it is worth looking briefly at what an integral constant expression is,
    since that is what must follow the \case{} labels in a
-     \switch{} statement. Loosely speaking, it is any expression
-     that does not involve any value-changing operation (like increment or
-     assignment), function calls or comma operators. The operands in the
-     expression must all be integer constants, character constants,
-     enumeration constants, \sizeof{} epressions and floating-point
-     constants that are the immediate operands of casts. Any cast operators
-     must result in integral types.
+   \switch{} statement. Loosely speaking, it is any expression
+   that does not involve any value-changing operation (like increment or
+   assignment), function calls or comma operators. The operands in the
+   expression must all be integer constants, character constants,
+   enumeration constants, \sizeof{} epressions and floating-point
+   constants that are the immediate operands of casts. Any cast operators
+   must result in integral types.
 
 
     Much what you would expect, really.
@@ -7991,7 +7991,6 @@ secret[8] = 0;
     \end{table}
 
 
-
    Read it carefully; make sure that you understand the combinations.
 
 
@@ -8001,8 +8000,8 @@ secret[8] = 0;
     three cases and that they associate right to left, can you work out what
     happens if the brackets are removed?
     Nasty, isn't it?
-    Table~\ref{tab:pointerNot2} shows that there's only one case where the brackets have to
-    be there.
+    Table~\ref{tab:pointerNot2} shows that there's only one case
+    where the brackets have to be there.
 
 
     \begin{table}[htb]
@@ -9064,7 +9063,7 @@ main() {
         with boxes containing 'wp\_cval',
         an empty space of padding, 'wp\_font' and 'wp\_psize'.}
       \caption{\label{fig:struct}Storage Layout of a Structure}
-    \end{figure*}
+   \end{figure*}
 
 
 
@@ -9121,7 +9120,7 @@ main() {
         and each item containing a 'data' value and a 'pointer' value
         which points to the next item (the last pointer is null).}
       \caption{\label{fig:linkedList}List linked by pointers}
-    \end{figure*}
+   \end{figure*}
 
 
 
@@ -12773,14 +12772,15 @@ char *setlocale(int category, const char *locale);
      The values for locale can be:
 
      \begin{tabular}{lp{0.5\textwidth}}
+        \toprule
        \texttt{"C"} & Select the minimal environment for C translation      \\
        \texttt{""} & Select the implementation-defined `native environment' \\
        implementation defined & Select other environments      \\
-\end{tabular}
+       \bottomrule
+     \end{tabular}
 
 
-    
-   \end{description}
+      \end{description}
 
    When the program starts, it has an environment as if
 
@@ -12826,10 +12826,12 @@ struct lconv *localeconv(void);
 
 
    \begin{tabular}{ll}
+     \toprule
      \texttt{IR\pounds1,234.56}   & positive format    \\
      \texttt{(IR\pounds1,234.56)} & negative format    \\
      \texttt{IRP 1,234.56}        & international format    \\
-\end{tabular}
+     \bottomrule
+   \end{tabular}
 
 
    then the monetary members of \texttt{lconv} would have the
@@ -12837,6 +12839,7 @@ struct lconv *localeconv(void);
 
 
    \begin{tabular}{ll}
+     \toprule
      \texttt{int\_curr\_symbol}   & \texttt{"IRP "}    \\
      \texttt{currency\_symbol}    & \texttt{"IR\pounds"}    \\
      \texttt{mon\_decimal\_point} & \texttt{"."}    \\
@@ -12852,7 +12855,8 @@ struct lconv *localeconv(void);
      \texttt{n\_sep\_by\_space}   & \texttt{0}    \\
      \texttt{p\_sign\_posn}       & \texttt{CHAR\_MAX}    \\
      \texttt{n\_sign\_posn}       & \texttt{0}    \\
-\end{tabular}
+     \bottomrule
+   \end{tabular}
 
 
   
@@ -12881,9 +12885,7 @@ struct lconv *localeconv(void);
     are more negative but must provide support for at least
     -32767.
 
-    %\begin{center}
 
-    %\begin{adjustbox}{width={\textwidth}}
     
     \begin{table}[htb]
       \centering
@@ -12919,15 +12921,13 @@ struct lconv *localeconv(void);
         \texttt{UCHAR\_MAX}.}\\
         \bottomrule
       \end{tabular}
-      % \end{adjustbox}
-      % \end{center}
       \caption{\label{tab:limits_h}\texttt{<limits.h>}}
     \end{table}
 
 
 
-  
 
+  
   \subsection{Float.h}
    
 
@@ -14180,12 +14180,12 @@ int fflush(FILE *stream);
    \item[conversion] See Table~\ref{tab:conv}.
    \end{description}
 
-\begin{table}[htb]
-  \centering
-      \begin{tabular}{lp{0.65\textwidth}p{0.15\textwidth}}
-    \toprule
+   \begin{table}[htb]
+     \centering
+     \begin{tabular}{lp{0.65\textwidth}p{0.15\textwidth}}
+       \toprule
         Specifier & Effect & Default precision    \\
-    \midrule
+        \midrule
         \texttt{d} & signed decimal & 1    \\
         \texttt{i} & signed decimal & 1    \\
         \texttt{u} & unsigned decimal & 1    \\
@@ -14234,8 +14234,8 @@ int fflush(FILE *stream);
                      the integer. &     \\
 
         \texttt{\%} & A \texttt{\%} & --        \\
-    \bottomrule
-\end{tabular}
+        \bottomrule
+      \end{tabular}
   \caption{\label{tab:conv}Conversions}
 \end{table}
 
@@ -15554,32 +15554,34 @@ Sun Sep 16 01:03:52 1973\n\0
      appropriate to the locale}.
 
 
-    \begin{tabular}{ll}
-      \texttt{\%a} & abbreviated weekday name     \\
-      \texttt{\%A} & full weekday name     \\
-      \texttt{\%b} & abbreviated month name     \\
-      \texttt{\%B} & full month name     \\
-      \texttt{\%c} & date and time representation     \\
-      \texttt{\%d} & decimal day of month number 01-31     \\
-      \texttt{\%H} & hour 00-23 (24 hour format)     \\
-      \texttt{\%I} & hour 01-12 (12 hour format)     \\
-      \texttt{\%j} & day of year 001-366     \\
-      \texttt{\%m} & month 01-12     \\
-      \texttt{\%M} & minute 00-59     \\
-      \texttt{\%p} & local equivalent of `AM' or `PM'     \\
-      \texttt{\%S} & second 00-61     \\
-      \texttt{\%U} & week number in year 00-53
-                     (Sunday  is  first  day  of week)     \\
-      \texttt{\%w} & weekday, 0-6 (Sunday is 0)     \\
-      \texttt{\%W} & week number in year 00-53
-                     (Monday  is  first  day  of week)     \\
-      \texttt{\%x} & local date representation     \\
-      \texttt{\%X} & local time representation     \\
-      \texttt{\%y} & year without century prefix 00-99     \\
-      \texttt{\%Y} & year with century prefix     \\
-      \texttt{\%Z} & timezone name, or no characters if no timezone exists  \\
-      \texttt{\%\%} & a \texttt{\%} character     \\
-    \end{tabular}
+   \begin{tabular}{ll}
+     \toprule
+     \texttt{\%a} & abbreviated weekday name     \\
+     \texttt{\%A} & full weekday name     \\
+     \texttt{\%b} & abbreviated month name     \\
+     \texttt{\%B} & full month name     \\
+     \texttt{\%c} & date and time representation     \\
+     \texttt{\%d} & decimal day of month number 01-31     \\
+     \texttt{\%H} & hour 00-23 (24 hour format)     \\
+     \texttt{\%I} & hour 01-12 (12 hour format)     \\
+     \texttt{\%j} & day of year 001-366     \\
+     \texttt{\%m} & month 01-12     \\
+     \texttt{\%M} & minute 00-59     \\
+     \texttt{\%p} & local equivalent of `AM' or `PM'     \\
+     \texttt{\%S} & second 00-61     \\
+     \texttt{\%U} & week number in year 00-53
+                    (Sunday  is  first  day  of week)     \\
+     \texttt{\%w} & weekday, 0-6 (Sunday is 0)     \\
+     \texttt{\%W} & week number in year 00-53
+                    (Monday  is  first  day  of week)     \\
+     \texttt{\%x} & local date representation     \\
+     \texttt{\%X} & local time representation     \\
+     \texttt{\%y} & year without century prefix 00-99     \\
+     \texttt{\%Y} & year with century prefix     \\
+     \texttt{\%Z} & timezone name, or no characters if no timezone exists  \\
+     \texttt{\%\%} & a \texttt{\%} character     \\
+     \bottomrule
+   \end{tabular}
 
 
     The  total  number  of  characters  copied  into  \texttt{*s}   is
