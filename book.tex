@@ -454,14 +454,14 @@
    to use the loader: Ada has sometimes been quoted as an example of this
    effect occurring. For C, the work that has to be done by the loader is not
    large and the approach is a sensible one.
-   Figure 1.1 shows the way that this works.
+   Figure~\ref{fig:sepComp} shows the way that this works.
 
 
    \begin{figure*}[htb]
      \centering
      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/1.1}
-     \caption{Diagram showing multiple files going from source, through           compilation, to object files, and being combined with libraries by           the loader to produce a program.}
-   \begin{center}\textit{Figure 1.1. Separate compilation}\end{center}
+     \caption*{Diagram showing multiple files going from source, through           compilation, to object files, and being combined with libraries by           the loader to produce a program.}
+     \caption{\label{fig:sepComp}Separate compilation}
    \end{figure*}
 
 
@@ -6946,13 +6946,13 @@ double ar[100];
 
   The name of the array is \texttt{ar} and its members are accessed
    as \texttt{ar[0]} through to \texttt{ar[99]} inclusive, as
-   Figure 5.1 shows.
+   Figure~\ref{fig:arr} shows.
 
 
    \begin{figure*}[htb]\centering
      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.1}
-     \caption{Diagram showing an array consisting of elements labelled 'ar[0]',           'ar[1]', etc., up to 'ar[99]'.}
-     \begin{center}\textit{Figure 5.1. 100 element array}\end{center}
+     \caption*{Diagram showing an array consisting of elements labelled 'ar[0]',           'ar[1]', etc., up to 'ar[99]'.}
+     \caption{\label{fig:arr}100 element array}
    \end{figure*}
 
 
@@ -7006,14 +7006,15 @@ int t_d[2][3];
     right and that, as a result, the first declaration gives us
     a five-element array called three\_dee. The members of that array are
     each a four element array whose members are an array of two ints. We
-    have declared arrays of arrays, as Figure 5.2 shows for two
+    have declared arrays of arrays, as Figure~\ref{fig:arr2} shows for two
     dimensions.
 
 
     \begin{figure*}\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.2}
-      \caption{Diagram showing a two dimensional array, with the 'outer' array            having two elements labelled 't\_d[0]' and 't\_d[1]', each with            three elements within it, labelled 't\_d[0][0]', etc.}
-\begin{center}\textit{Figure 5.2. Two-dimensional array, showing layout}\end{center}    \end{figure*}
+      \caption*{Diagram showing a two dimensional array, with the 'outer' array            having two elements labelled 't\_d[0]' and 't\_d[1]', each with            three elements within it, labelled 't\_d[0][0]', etc.}
+     \caption{\label{fig:arr2}Two-dimensional array, showing layout}
+   \end{figure*}
 
 
 
@@ -7114,15 +7115,15 @@ three_dee[4][3][1] = three_dee[4][3][1] + 2;
 int ar[5], *ip;
 \end{Verbatim}
 
-   We now have an array and a pointer (see Figure 5.3):
+   We now have an array and a pointer (see Figure~\ref{fig:arrPtr}):
 
 
    \begin{figure*}[htb]\centering
      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.3}
-     \caption{Diagram showing an array with four elements
+     \caption*{Diagram showing an array with four elements
        (labelled 'ar[0]' to 'ar[4]') and a pointer called 'ip'
        which does not currently have any connection to the array.}
-   \begin{center}\textit{Figure 5.3. An array and a pointer}\end{center}
+     \caption{\label{fig:arrPtr}An array and a pointer}
    \end{figure*}
 
 
@@ -7158,15 +7159,16 @@ ip = &ar[3];
     array \texttt{ar} whose index is \texttt{3}, i.e. the fourth
     member. This is important. You can assign values to pointers just like
     ordinary variables; the difference is simply in what the value means.
-    The values of the variables that we have now are shown in Figure 5.4 (\texttt{??} means uninitialized).
+    The values of the variables that we have now
+    are shown in Figure~\ref{fig:arrInitPtr} (\texttt{??} means uninitialized).
 
 
     \begin{figure*}\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.4}
-      \caption{Diagram showing an array with four elements
+      \caption*{Diagram showing an array with four elements
         (labelled 'ar[0]' to 'ar[4]') each of which has an undefined value,
         and a pointer called 'ip' which contains the address of 'ar[3]'.}
-    \begin{center}\textit{Figure 5.4. Array and initialized pointer}\end{center}
+      \caption{\label{fig:arrInitPtr}Array and initialized pointer}
     \end{figure*}
 
 
@@ -7279,31 +7281,34 @@ float f;
     pointed to by its arguments.
 
 
-   When \texttt{date} is called, the situation looks like Figure 5.5.
+    When \texttt{date} is called,
+    the situation looks like Figure~\ref{fig:callDate}.
 
 
    \begin{figure*}[htb]\centering
      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.5]{figure/5.5}
-     \caption{Diagram showing the variables 'day' and 'month'
+     \caption*{Diagram showing the variables 'day' and 'month'
        which have undefined values,
        and the pointers 'day\_p' and 'month\_p' which contain their addresses.}
-\begin{center}\textit{Figure 5.5. Just as \texttt\{date\} is called}\end{center}
+     \caption{\label{fig:callDate}Just as \texttt\{date\} is called}
    \end{figure*}
 
 
 
    The arguments have been passed to \texttt{date}, but in
     \texttt{main}, day and month are uninitialized. When date reaches
-    the return statement, the situation is as shown in Figure 5.6 (assuming that the values for day and month are 12 and
+    the return statement,
+    the situation is as shown in Figure~\ref{fig:callDateRet}
+    (assuming that the values for day and month are 12 and
     5 respectively).
 
 
     \begin{figure*}[htb]\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.5]{figure/5.6}
-      \caption{Diagram showing the same variables as Figure 5.5,
+      \caption*{Diagram showing the same variables as Figure~\ref{fig:callDate},
         except that the 'day' and 'month'
         now have the values '12' and '5' respectively.}
-\begin{center}\textit{Figure 5.6. Just as \texttt\{date\} is about to return}\end{center}
+      \caption{\label{fig:callDateRet}Just as \texttt\{date\} is about to return}
     \end{figure*}
 
 
@@ -7875,13 +7880,13 @@ secret[8] = 0;
    It's a pointer of course: a pointer to the first element of the hidden
     unnamed array, which is of type \kchar, so the pointer is of
     type `pointer to \kchar'. The situation is shown in
-    Figure 5.7.
+    Figure~\ref{fig:string}.
 
 
     \begin{figure*}[htb]\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/5.7}
-      \caption{Diagram showing an unnamed array of 'const char' values, where the            last item has the value '0', and showing that a 'const char *'            value that points to the first of them can be used as a string.}
-    \begin{center}\textit{Figure 5.7. Effect of using a string}\end{center}
+      \caption*{Diagram showing an unnamed array of 'const char' values, where the            last item has the value '0', and showing that a 'const char *'            value that points to the first of them can be used as a string.}
+      \caption{\label{fig:string}Effect of using a string}
     \end{figure*}
 
 
@@ -9041,15 +9046,15 @@ main() {
     storage layout. It's best not to worry about this too much, but it is
     sometimes useful if you have to use C to access record-structured data
     written by other programs. The \texttt{wp\_char} structure will be
-    allocated storage as shown in Figure 6.1.
+    allocated storage as shown in Figure~\ref{fig:struct}.
 
 
     \begin{figure*}[htb]+\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.95]{figure/6.1}
-      \caption{Diagram showing the layout of the values in 'struct wp\_char',
+      \caption*{Diagram showing the layout of the values in 'struct wp\_char',
         with boxes containing 'wp\_cval',
         an empty space of padding, 'wp\_font' and 'wp\_psize'.}
-\begin{center}\textit{Figure 6.1. Storage Layout of a Structure}\end{center}
+      \caption{\label{fig:struct}Storage Layout of a Structure}
     \end{figure*}
 
 
@@ -9095,17 +9100,17 @@ main() {
     but it will go on to describe two very common examples of the breed: linked
     lists and trees. Both have a feature in common: they consist of structures
     containing pointers to other structures, all the structures typically being
-    of the same type. Figure 6.2 shows a picture of a linked
+    of the same type. Figure~\ref{fig:linkedList} shows a picture of a linked
     list.
 
 
     \begin{figure*}[htb]\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]{figure/6.2}
-      \caption{Diagram showing a linked list of three items,
+      \caption*{Diagram showing a linked list of three items,
         with a pointer  labelled 'list head' pointing to the first item,
         and each item containing a 'data' value and a 'pointer' value
         which points to the next item (the last pointer is null).}
-\begin{center}\textit{Figure 6.2. List linked by pointers}\end{center}
+      \caption{\label{fig:linkedList}List linked by pointers}
     \end{figure*}
 
 
@@ -9281,19 +9286,20 @@ struct tree_node {
    For historical and essentially irrelevant reasons, trees in computer
     science work upside down. They have their \textbf{root} node at the top
     and their \textbf{branches} spread out downwards.
-    In Figure 6.3, the `data' members of the nodes are replaced by values
+    In Figure~\ref{fig:tree},
+    the `data' members of the nodes are replaced by values
     which will be used in the discussion that follows.
 
 
     \begin{figure*}[htb]\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]{figure/6.3}
-      \caption{A tree structure, made up of 7 items,
+      \caption*{A tree structure, made up of 7 items,
         each of which is labelled with a different number.
         Each item has two pointer values, labelled 'left\_p' and 'right\_p',
         which point to child items.
         One item is labelled 'root'
         and isn't a child of any of the other  items.}
-\begin{center}\textit{Figure 6.3. A tree}\end{center}
+      \caption{\label{fig:tree}A tree}
     \end{figure*}
 
 
@@ -9309,7 +9315,7 @@ struct tree_node {
     a flexible and useful data structure.
 
 
-   Look at Figure 6.3. The tree is carefully constructed so
+   Look at Figure~\ref{fig:tree}. The tree is carefully constructed so
     that it can be searched to find whether a given value can be found in the
     data portions of the nodes. Let's say we want to find if a value
     x is already present in the tree. The algorithm is this:
@@ -9984,7 +9990,7 @@ main() {
 
   
 
-  Although the preprocessor (Figure 7.1) is probably going
+  Although the preprocessor (Figure~\ref{fig:preProc}) is probably going
    to be implemented as an integral part of an Standard C compiler, it can
    equally well be though of as a separate program which transforms C source
    code containing preprocessor directives into source code with the
@@ -9993,10 +9999,10 @@ main() {
 
    \begin{figure*}[htb]\centering
      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.8]{figure/7.1}
-     \caption{Diagram showing source code
+     \caption*{Diagram showing source code
        passing through a preprocessor to become 'preprocessed source',
        which is then fed into the rest of the compiler.}
-   \begin{center}\textit{Figure 7.1. The preprocessor}\end{center}
+     \caption{\label{fig:preProc}The preprocessor}
    \end{figure*}
 
 
@@ -11503,13 +11509,13 @@ void func(int i, int j);
     linkage, and no linkage respectively. The recommended practice for the
     first two cases is to declare all of the names in each of the relevant
     source files \textit{before} you define any functions. The recommended
-    layout of a source file would be as shown in Figure 8.1.
+    layout of a source file would be as shown in Figure~\ref{fig:srcFile}.
 
 
     \begin{figure*}\centering
       \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=1.0]{figure/8.1}
-      \caption{Diagram showing the typical layout of a C source file, starting            with external linkage declarations, which are followed by internal            linkage declarations, and then functions at the end.}
-\begin{center}\textit{Figure 8.1. Layout of a source file}\end{center}
+      \caption*{Diagram showing the typical layout of a C source file, starting            with external linkage declarations, which are followed by internal            linkage declarations, and then functions at the end.}
+      \caption{\label{fig:srcFile}Layout of a source file}
     \end{figure*}
 
 
@@ -15714,13 +15720,13 @@ Sun Sep 16 01:03:52 1973\n\0
   If the program name is \texttt{show\_args} and it has arguments
    \texttt{abcde}, \texttt{text}, and \texttt{hello} when it is
    run, the state of the arguments and the value of \texttt{argv} can be
-   illustrated like this:
+   illustrated like in Figure~\ref{fig:argPrg}.
 
 
    \begin{figure*}\centering
      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/10.1}
-     \caption{Diagram showing the relationship between 'argc' and 'argv'                and the strings that elements of 'argv' point to}
-   \begin{center}\textit{Figure 10.1. Arguments to a program}\end{center}
+     \caption*{Diagram showing the relationship between 'argc' and 'argv'                and the strings that elements of 'argv' point to}
+     \caption{\label{fig:argPrg}Arguments to a program}
    \end{figure*}
 
 
@@ -15729,19 +15735,17 @@ Sun Sep 16 01:03:52 1973\n\0
    further along the array of arguments. Thus after the first iteration of
    the loop, \texttt{argv} will point to the pointer which in turn
    points to the \texttt{abcde} argument.  This is shown in
-   Figure 10.2.
+   Figure~\ref{fig:argPrgInc}.
 
 
    \begin{figure*}\centering
      \includegraphics[type=pdf,read=.pdf,ext=.pdf,scale=0.9]{figure/10.2}
-     \caption{Diagram showing the changes to the arrangement in Figure 10.1
+     \caption*{Diagram showing the changes
+       to the arrangement in Figure~\ref{fig:argPrg}
        after incrementing 'argv' so that it points to the next
        element in the array of pointers}
-
-   \begin{center}
-     \textit{Figure 10.2. Arguments to a program after incrementing
+     \caption{\label{fig:argPrgInc}Arguments to a program after incrementing
        \texttt\{argv\}}
-   \end{center}
    \end{figure*}
 
 
