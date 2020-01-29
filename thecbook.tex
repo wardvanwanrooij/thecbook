@@ -13,6 +13,9 @@
 \usepackage{srcltx}   % does     provide forward search 
 \usepackage{adjustbox}
 \usepackage{verbatimbox}
+\usepackage[numbib, numindex]{tocbibind}%[nottoc,
+\usepackage{longtable}
+\usepackage{booktabs}
 \usepackage[pdftex,bookmarks=true,bookmarksnumbered=true,hypertexnames=false,breaklinks=true,linkbordercolor={0 0 1}]{hyperref}
 \hypersetup{pdfauthor={Ward van Wanrooij},
   pdftitle={The C Book},
@@ -91,6 +94,7 @@
 \pdfbookmark[1]{Contents}{toc}
 \setcounter{page}{1}
 \tableofcontents
+\listoftables
 \mainmatter
 \include{book}
 
