@@ -6,10 +6,10 @@ main() {
   char c;
 
   c = CHAR_MIN;
-  while (c != CHAR_MAX) {
+  do {
     printf("%d\n", c);
     c = c+1;
-  }
+  } while (c < CHAR_MAX);
 
   exit(EXIT_SUCCESS);
 }

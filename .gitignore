@@ -5,3 +5,6 @@
 /*.bbl
 /*.blg
 /*.synctex.gz
+/*.lot
+/*.lof
+/*.pdf
