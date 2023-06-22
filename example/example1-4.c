@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 #include <stdlib.h>
 #define ARSIZE  10
 main() {

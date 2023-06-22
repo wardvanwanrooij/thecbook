@@ -5,17 +5,17 @@
 int maxof(int, ...) ;
 void f(void);
 
-main(){
+main() {
         f();
-        exit(EXIT SUCCESS);
+        exit(EXIT_SUCCESS);
 }
 
-int maxof(int n args, ...){
+int maxof(int n_args, ...) {
         register int i;
         int max, a;
         va_list ap;
 
-        va_start(ap, n args);
+        va_start(ap, n_args);
         max = va_arg(ap, int);
         for(i = 2; i <= n_args; i++) {
                 if((a = va_arg(ap, int)) > max)
