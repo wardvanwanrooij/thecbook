@@ -1,9 +1,7 @@
 int f(int, ... );
 
-int f(int, ... ) {
-        .
-        .
-        .
+int f(int a, ... ) {
+        /* ... */
 }
 
 int g() {
