@@ -13,11 +13,11 @@ main() {
     not_prime = 0;
     while(divisor > 1) {
       if(this_number % divisor == 0){
-	not_prime = 1;
-	divisor = 0;
+        not_prime = 1;
+        divisor = 0;
       }
       else
-	divisor = divisor-1;
+        divisor = divisor-1;
     }
 
     if(not_prime == 0)

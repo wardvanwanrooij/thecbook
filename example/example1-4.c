@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define ARSIZE  10
+#define ARSIZE 10
 main() {
   int ch_arr[ARSIZE],count1;
   int count2, stop, lastchar;
@@ -30,11 +30,11 @@ main() {
     count2 = count1 + 1;
     while (count2 <= lastchar) {
       if (ch_arr[count1] > ch_arr[count2]) {
-	/* swap */
-	int temp;
-	temp = ch_arr[count1];
-	ch_arr[count1] = ch_arr[count2];
-	ch_arr[count2] = temp;
+        /* swap */
+        int temp;
+        temp = ch_arr[count1];
+        ch_arr[count1] = ch_arr[count2];
+        ch_arr[count2] = temp;
       }
       count2 = count2 + 1;
     }
